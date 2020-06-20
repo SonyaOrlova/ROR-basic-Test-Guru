@@ -12,6 +12,8 @@ module RORBasicTestGuru
     config.load_defaults 6.0
 
     config.time_zone = 'Europe/Moscow'
+
+    config.i18n.enforce_available_locales = false
     config.i18n.default_locale = :ru
     
     # Settings in config/environments/* take precedence over those specified here.
