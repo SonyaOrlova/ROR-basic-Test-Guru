@@ -13,6 +13,9 @@ class Test < ApplicationRecord
 
   scope :by_category_title, -> (category_title) { joins(:category).where(categories: { title: category_title }) }
 
+  validates :title, presence: true, uniqueness: { case_sensitive: false, scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
   def self.desc_tests_titles_by_category_title(category_title)
     by_category_title(category_title).order(title: :desc).pluck(:title)
   end

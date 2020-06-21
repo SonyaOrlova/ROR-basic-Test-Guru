@@ -71,9 +71,7 @@ categories.each do |c|
       test.questions << question
 
       q[:answers].each do |a|
-        answer = Answer.create({ body: a[:body], is_correct: a[:is_correct] })
-
-        question.answers << answer
+        Answer.create({ body: a[:body], is_correct: a[:is_correct], question_id: question.id })
       end
     end
   end
