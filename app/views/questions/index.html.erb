@@ -1,0 +1,9 @@
+<h1> Вопросы теста «<%= @test.title %>»: </h1>
+<ul>
+  <% @test.questions.each do |question| %>
+    <li> 
+      <h4> id: <%= question.id %>, формулировка: <%= question.body %> </h4>
+      <p> <%= link_to 'Удалить', question, method: :delete  %> </p>
+    </li>
+  <% end %>
+</ul>

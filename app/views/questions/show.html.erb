@@ -1,0 +1,8 @@
+<h1> Вопрос «<%= @question.body %>»: </h1>
+<p> Относится к тесту: «<%= Test.find(@question.test_id).title %>» </p>
+<p> Варианты ответов:</p>
+<ul>
+  <% @question.answers.each do |answer| %>
+    <li> <%= answer.body %> <%= '(✓)' if answer.is_correct %> </li>
+  <% end %>
+</ul>

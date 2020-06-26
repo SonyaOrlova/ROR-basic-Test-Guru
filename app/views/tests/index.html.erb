@@ -1,0 +1,8 @@
+<h1> Тесты: </h1>
+<ul>
+  <% Test.all.each do |test| %>
+    <li>
+      <h4> id: <%= test.id %>, название: <%= test.title %> </h4>
+    </li>
+  <% end %>
+</ul>

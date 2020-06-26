@@ -1,0 +1,9 @@
+<h1> Создание нового вопроса </h1>
+<form action="<%= test_questions_path  %>" method="post">
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+  <label for="question-body">Вопрос:</label>
+  <input id="question-body" name="body" type="text">
+
+  <input type="submit" value="Создать">
+</form>
