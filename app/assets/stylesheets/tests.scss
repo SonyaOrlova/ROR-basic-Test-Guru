@@ -1,3 +1,75 @@
 // Place all the styles related to the tests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.tests {
+  h1 {
+    margin-bottom: 50px;
+  }
+}
+
+.tests__item {
+  border-bottom: 2px solid black;
+
+  &:not(:last-child) {
+    margin-bottom: 25px;
+  }
+
+  h2, p {
+    margin-bottom: 15px;
+  }
+
+  a {
+    color: darkgreen;
+  }
+}
+
+.test {
+  h1 {
+    margin-bottom: 50px;
+
+    color: darkgreen;
+  }
+
+  h2 {
+    margin-bottom: 25px;
+
+    font-size: 20px;
+    color: brown;
+  }
+
+  h3 {
+    margin-bottom: 15px;
+
+    font-size: 16px;
+  }
+
+  .test__question {
+    border-bottom: 2px solid black;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  .test__question-actions {
+    margin: 25px 0 5px;
+
+    a {
+      color: gray;
+    }
+  }
+
+  .test__question-new {
+    float: right;
+
+    border: 1px solid black;
+    padding: 10px;
+    background-color: darkgreen;
+    border-radius: 10px;
+
+    a {
+      color: white;
+    }
+  }
+}
