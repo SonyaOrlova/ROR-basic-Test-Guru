@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
-  resources :tests, only: [:index] do
-    resources :questions, only: [:index, :show, :new, :create, :destroy], shallow: true
+  resources :tests, only: [:index, :show] do
+    resources :questions, only: [:new, :create, :edit, :update, :destroy], shallow: true
   end
 end

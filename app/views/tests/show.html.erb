@@ -1,0 +1,31 @@
+<nav> <%= link_to 'На главную страницу', root_path %> </nav>
+
+<div class='test'>
+
+  <h1> <%= @test.title %> </h1>
+
+  <% @test.questions.each do |question| %>
+    <div class='test__question'>
+      <h2> <%= question.body %> </h2>
+
+      <h3> Варианты ответов: </h3>
+
+      <% if question.answers.empty? %>
+        <p> пока не добавлены </p>
+      <% else %>
+        <ul>
+          <% question.answers.each do |answer| %>
+            <li> <%= answer.body %> <%= '(✓)' if answer.is_correct %> </li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <p class='test__question-actions'>
+        <%= link_to 'Удалить вопрос', question_path(question), method: :delete %> |
+        <%= link_to 'Редактировать вопрос', edit_question_path(question) %>
+      </p>
+    </div>
+  <% end %>
+
+  <p class='test__question-new'> <%= link_to 'Добавить новый вопрос', new_test_question_path(@test) %> </p>
+</div>

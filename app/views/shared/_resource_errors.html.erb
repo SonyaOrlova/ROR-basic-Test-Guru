@@ -1,0 +1,13 @@
+<div class='question-errors'>
+  <% if resource.errors.present? %>
+    <div>
+      <h2> Возникли следующие ошибки: </h2>
+
+      <ul>
+        <% resource.errors.full_messages.each do |message| %>
+          <li> <%= message %> </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>

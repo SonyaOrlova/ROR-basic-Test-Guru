@@ -1,46 +1,47 @@
 class QuestionsController < ApplicationController
-  before_action :test, only: [:index, :create]
-  before_action :question, only: [:show, :destroy]
+  before_action :question, :test
 
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
-
-  def index; end
-
-  def show; end
-
-  def new; end
+  def new
+    @question = @test.questions.new
+  end
 
   def create
-    question = @test.questions.new(question_params)
+    @question = @test.questions.new(question_params)
 
-    if question.save
-      render plain: 'Вопрос успешно создан'
+    if @question.save
+      redirect_to test_path(@test), notice: "Вопрос «#{@question.body}» был успешно создан"
     else
-      render plain: 'Ошибка создания вопроса'
+      render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    if @question.update(question_params)
+      redirect_to test_path(@question.test), notice: "Вопрос «#{@question.body}» был успешно изменен"
+    else
+      render :edit
     end
   end
 
   def destroy
-    @question.delete
+    @question.destroy
     
-    render plain: 'Вопрос успешно удален'
+    redirect_to test_path(@question.test), notice: "Вопрос «#{@question.body}» был успешно удален"
   end
 
   private
 
-  def test
-    @test = Test.find(params[:test_id])
+  def question
+    @question = Question.find(params[:id]) if params[:id]
   end
 
-  def question
-    @question = Question.find(params[:id])
+  def test
+    @test = Test.find(params[:test_id]) if params[:test_id]
   end
 
   def question_params
-    params.permit(:body)
-  end
-
-  def rescue_with_question_not_found
-    render plain: 'Вопрос не найден'
+    params.require(:question).permit(:body)
   end
 end

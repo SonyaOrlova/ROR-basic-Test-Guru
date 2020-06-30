@@ -10,6 +10,20 @@
   </head>
 
   <body>
-    <%= yield %>
+    <main>
+      <div class='flash'>
+        <% flash.each do |_, value| %>
+          <p> <%= value %> </p>
+        <% end %>
+      </div>
+
+      <%= yield %>
+    </main>
+
+    <footer>
+      <p> © <%= current_year %> </p>
+      <p> <%= github_url('Test Guru', 'SonyaOrlova', 'ROR-basic-Test-Guru') %> </p>
+      <p> Учебный проект в онлайн-школе <%= link_to 'Thinknetica', 'https://thinknetica.com/', target: '_blank' %> </p>
+    </footer>
   </body>
 </html>
