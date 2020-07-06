@@ -7,5 +7,11 @@ Rails.application.routes.draw do
     resources :questions, except: [:index, :show], shallow: true do
       resources :answers, except: [:index, :show], shallow: true
     end
+
+    post 'start', on: :member
+  end
+
+  resources :test_passages, only: [:show, :update] do
+    get 'result', on: :member
   end
 end

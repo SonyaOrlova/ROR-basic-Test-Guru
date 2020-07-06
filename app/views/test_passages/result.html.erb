@@ -1,0 +1,11 @@
+<nav> <%= link_to 'На главную страницу', root_path %> </nav>
+
+<div class='test-passage-result'>
+  <h1> <%= result_text %>  </h1>
+
+  <h2> Процент успеха:
+    <span class="test-passage-result__<%= @test_passage.success? ? 'success' : 'fail'%>">
+      <%= @test_passage.test_result_rate %>
+    </span>
+  </h2>
+</div>

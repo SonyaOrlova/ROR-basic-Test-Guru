@@ -15,20 +15,24 @@
     margin-bottom: 25px;
   }
 
-  h2, p {
+  h2 {
     margin-bottom: 15px;
+
+    color: darkgreen;
   }
 
-  a {
-    color: darkgreen;
+  .test__actions {
+    margin: 25px 0 5px;
+
+    a {
+      color: gray;
+    }
   }
 }
 
 .test {
   h1 {
     margin-bottom: 50px;
-
-    color: darkgreen;
   }
 
   h2 {
