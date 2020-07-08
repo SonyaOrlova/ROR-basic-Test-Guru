@@ -1,0 +1,12 @@
+<nav> <%= link_to 'На страницу теста', test_path(@answer.question.test) %> </nav>
+
+<div class='answer'>
+  <h1> Редактирование ответа </h1>
+
+  <div class='answer__info'>
+    <p> Тест: <span> <%= @answer.question.test.title %> </span> </p>
+    <p> Вопрос: <span> <%= @answer.question.body %> </span> </p>
+  </div>
+
+  <%= render 'form', submit_title: 'Создать' %>
+</div>

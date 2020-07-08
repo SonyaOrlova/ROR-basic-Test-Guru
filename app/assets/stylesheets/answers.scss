@@ -1,25 +1,33 @@
-// Place all the styles related to the questions controller here.
+// Place all the styles related to the answers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.question-form {
+.answer {
   h1 {
     margin-bottom: 50px;
 
     color: darkgreen;
   }
 
-  label {
-    display: block;
-    margin-bottom: 10px;
+  .answer__info {
+    margin-bottom: 50px;
 
-    font-size: 12px;
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.answer-form {
+  label {
     color: gray;
   }
 
   textarea {
     width: 100%;
     height: 52px;
+
+    margin: 10px 0;
 
     padding: 10px;
     box-sizing: border-box;
@@ -37,5 +45,14 @@
     border-radius: 10px;
 
     background-color: darkgreen;
+  }
+
+  .answer-form__checkbox {
+    display: flex;
+    align-items: center;
+
+    label {
+      margin-right: 10px;
+    }
   }
 }

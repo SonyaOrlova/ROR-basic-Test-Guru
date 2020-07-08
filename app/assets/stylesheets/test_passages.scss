@@ -1,0 +1,49 @@
+// Place all the styles related to the test_passages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.test-passage {
+  h1 {
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+
+    color: brown;
+  }
+
+  input[type="submit"] {
+    padding: 10px;
+    margin-top: 15px;
+
+    color: white;
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    background-color: darkgreen;
+  }
+  
+  .test-passage__test-title {
+    color: darkgreen;
+  }
+
+  .test-passage__test-info {
+    margin-bottom: 30px;
+  }
+}
+
+.test-passage-result {
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  .test-passage-result__success {
+    color: darkgreen;
+  }
+
+  .test-passage-result__fail {
+    color: darkred;
+  }
+}

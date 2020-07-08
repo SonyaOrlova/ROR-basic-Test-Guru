@@ -3,9 +3,14 @@
 
   <% @tests.each do |test| %>
     <div class='tests__item'>
-        <h2> <%= link_to test.title, test %> </h2>
+        <h2> <%= test.title %> </h2>
 
         <p> Количество вопросов в тесте - <%= test.questions.count %> </p>
+        
+        <p class='test__actions'>
+          <%= link_to 'Пройти тест', start_test_path(test), method: :post %> |
+          <%= link_to 'Редактировать тест', test_path(test) %>
+        </p>
     </div>
   <% end %>
 </div>

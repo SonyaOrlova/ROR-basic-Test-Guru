@@ -5,7 +5,8 @@ class Test < ApplicationRecord
 
   belongs_to :author, class_name: 'User'
   
-  has_and_belongs_to_many :users
+  has_many :test_passages
+  has_many :users, through: :test_passages
 
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }

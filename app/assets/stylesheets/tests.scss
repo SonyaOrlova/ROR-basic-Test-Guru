@@ -15,20 +15,24 @@
     margin-bottom: 25px;
   }
 
-  h2, p {
+  h2 {
     margin-bottom: 15px;
+
+    color: darkgreen;
   }
 
-  a {
-    color: darkgreen;
+  .test__actions {
+    margin: 25px 0 5px;
+
+    a {
+      color: gray;
+    }
   }
 }
 
 .test {
   h1 {
     margin-bottom: 50px;
-
-    color: darkgreen;
   }
 
   h2 {
@@ -42,6 +46,10 @@
     margin-bottom: 15px;
 
     font-size: 16px;
+  }
+
+  .test__title {
+    color: darkgreen;
   }
 
   .test__question {
@@ -63,10 +71,46 @@
   .test__question-new {
     float: right;
 
-    border: 1px solid black;
     padding: 10px;
+
     background-color: darkgreen;
+
+    border: 1px solid black;
     border-radius: 10px;
+
+    a {
+      color: white;
+    }
+  }
+
+  .test__question-answers {
+    li:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+
+  .test__question-answers-actions {
+    margin: 5px 0;
+
+    font-size: 12px;
+
+    a {
+      color: gray;
+    }
+  }
+
+  .test__question-answer-new {
+    display: inline-block;
+
+    padding: 5px;
+    margin-bottom: 20px;
+
+    font-size: 12px;
+
+    background-color: darkgreen;
+
+    border: 1px solid black;
+    border-radius: 5px;
 
     a {
       color: white;
