@@ -10,9 +10,7 @@ class TestsController < ApplicationController
   def show; end
 
   def start
-    @user = User.first
-
-    test_passage = @user.test_passage(@test)
+    test_passage = current_user.test_passage(@test)
 
     redirect_to test_passage_path(test_passage)
   end
