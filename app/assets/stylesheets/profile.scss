@@ -1,0 +1,29 @@
+.profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    a {
+      color: maroon;
+    }
+  }
+
+  .logo {
+    a {
+      font-size: 40px;
+      line-height: 48px;
+      font-weight: 700;
+
+      color: darkblue;
+
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+
+  .profile__greet {
+    color: black;
+  }
+}
