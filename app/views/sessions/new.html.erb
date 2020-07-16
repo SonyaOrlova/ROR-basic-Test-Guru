@@ -1,0 +1,19 @@
+<div class='auth'>
+  <h1> Логин </h1>
+
+  <div class='auth__form'>
+    <%= form_with url: sessions_path, local: true do |form| %>
+      <p>
+        <%= form.label :email, 'Электронная почта'  %>
+        <%= form.text_field :email, id: :user_email  %>
+      </p>
+
+      <p>
+        <%= form.label :password, 'Пароль'  %>
+        <%= form.password_field :password, id: :user_password  %>
+      </p>
+
+      <%= form.submit 'Войти' %>
+    <% end %>
+  </div>
+</div>

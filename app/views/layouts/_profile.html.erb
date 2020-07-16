@@ -1,0 +1,22 @@
+<div class='profile'>
+  <p class='logo'> <%= link_to 'Тест Гуру', root_path %> </p>
+
+  <p>
+    <% if logged_in? %>
+      <span class='profile__greet'> Привет, <b><%= current_user.name %></b> Гуру! </span> |
+      <%= link_to 'Выйти', logout_path, method: :delete %>
+    <% else %>
+      <% if request.path != login_path %>
+        <%= link_to 'Войти', login_path %>
+      <% end %>
+
+      <% if request.path != login_path && request.path != signup_path %>
+        |
+      <% end %>
+
+      <% if request.path != signup_path %>
+        <%= link_to 'Зарегистрироваться', signup_path %>
+      <% end %>
+    <% end %>
+  </p>
+</div>
