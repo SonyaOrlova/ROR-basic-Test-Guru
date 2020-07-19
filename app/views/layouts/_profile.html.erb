@@ -2,20 +2,20 @@
   <p class='logo'> <%= link_to 'Тест Гуру', root_path %> </p>
 
   <p>
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       <span class='profile__greet'> Привет, <b><%= current_user.name %></b> Гуру! </span> |
-      <%= link_to 'Выйти', logout_path, method: :delete %>
+      <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
     <% else %>
-      <% if request.path != login_path %>
-        <%= link_to 'Войти', login_path %>
+      <% if request.path != new_user_session_path %>
+        <%= link_to 'Войти', new_user_session_path %>
       <% end %>
 
-      <% if request.path != login_path && request.path != signup_path %>
+      <% if request.path != new_user_session_path && request.path != new_user_registration_path %>
         |
       <% end %>
 
-      <% if request.path != signup_path %>
-        <%= link_to 'Зарегистрироваться', signup_path %>
+      <% if request.path != new_user_registration_path %>
+        <%= link_to 'Зарегистрироваться', new_user_registration_path %>
       <% end %>
     <% end %>
   </p>

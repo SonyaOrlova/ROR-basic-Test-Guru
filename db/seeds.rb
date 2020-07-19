@@ -8,7 +8,7 @@
 
 [User, Answer, Question, Test, Category].each(&:destroy_all)
 
-user = User.create({ name: 'default', email: 'default', password: 'default' })
+user = User.create({ name: 'Sonya', email: 'sonya@mail.ru', password: 123456 })
 
 categories = [
   {
@@ -59,21 +59,18 @@ categories = [
   }
 ]
 
+
 categories.each do |c|
   category = Category.create({ title: c[:title] })
 
   c[:tests].each do |t|
-    test = Test.create({ title: t[:title], level: t[:level], author_id: user.id })
-
-    category.tests << test
+    test = category.tests.create({ title: t[:title], level: t[:level], author_id: user.id })
 
     t[:questions].each do |q|
-      question = Question.create({ body: q[:body] })
-
-      test.questions << question
+      question = test.questions.create({ body: q[:body] })
 
       q[:answers].each do |a|
-        Answer.create({ body: a[:body], is_correct: a[:is_correct], question_id: question.id })
+        question.answers.create({ body: a[:body], is_correct: a[:is_correct] })
       end
     end
   end
