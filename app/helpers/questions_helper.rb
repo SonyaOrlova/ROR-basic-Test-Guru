@@ -1,9 +1,9 @@
 module QuestionsHelper
   def question_header
     if @question.new_record?
-      "Создание нового вопроса теста «#{@test.title}»"
+      "Создание нового вопроса"
      else
-      "Редактирование вопроса теста «#{@question.test.title}»"
+      "Редактирование вопроса теста"
     end
   end
 end

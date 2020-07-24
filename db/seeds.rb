@@ -8,7 +8,7 @@
 
 [User, Answer, Question, Test, Category].each(&:destroy_all)
 
-user = User.create({ name: 'Sonya', email: 'sonya@mail.ru', password: 123456 })
+user = User.create({ first_name: 'Admin', last_name: 'Admin', email: 'admin@mail.ru', password: 123456, type: 'Admin' })
 
 categories = [
   {

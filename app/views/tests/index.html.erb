@@ -5,11 +5,10 @@
     <div class='tests__item'>
         <h2> <%= test.title %> </h2>
 
-        <p> Количество вопросов в тесте - <%= test.questions.count %> </p>
+        <p> Количество вопросов в тесте - <b><%= test.questions.count %></b> </p>
         
         <p class='test__actions'>
-          <%= link_to 'Пройти тест', start_test_path(test), method: :post %> |
-          <%= link_to 'Редактировать тест', test_path(test) %>
+          <%= link_to 'Пройти тест', start_test_path(test), method: :post %>
         </p>
     </div>
   <% end %>

@@ -1,4 +1,4 @@
-class AnswersController < ApplicationController
+class Admin::AnswersController < Admin::BaseController
   before_action :answer, :question
 
   def new
@@ -9,7 +9,7 @@ class AnswersController < ApplicationController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to test_path(@question.test), notice: "Ответ «#{@answer.body}» для вопроса «#{@question.body}» был успешно создан"
+      redirect_to admin_test_path(@question.test), notice: "Ответ «#{@answer.body}» для вопроса «#{@question.body}» был успешно создан"
     else
       render :new
     end
@@ -19,7 +19,7 @@ class AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to test_path(@answer.question.test), notice: "Ответ «#{@answer.body}» для вопроса «#{@answer.question.body}» был успешно изменен"
+      redirect_to admin_test_path(@answer.question.test), notice: "Ответ «#{@answer.body}» для вопроса «#{@answer.question.body}» был успешно изменен"
     else
       render :edit
     end
@@ -28,7 +28,7 @@ class AnswersController < ApplicationController
   def destroy
     @answer.destroy
     
-    redirect_to test_path(@answer.question.test), notice: "Ответ «#{@answer.body}» для вопроса «#{@answer.question.body}» был успешно удален"
+    redirect_to admin_test_path(@answer.question.test), notice: "Ответ «#{@answer.body}» для вопроса «#{@answer.question.body}» был успешно удален"
   end
 
   private

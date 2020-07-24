@@ -3,7 +3,9 @@
 
   <p>
     <% if user_signed_in? %>
-      <span class='profile__greet'> Привет, <b><%= current_user.name %></b> Гуру! </span> |
+      <span class='profile__greet'> Привет,
+        <b><%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %></b> Гуру!
+      </span> |
       <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
     <% else %>
       <% if request.path != new_user_session_path %>

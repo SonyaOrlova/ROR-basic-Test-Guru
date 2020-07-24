@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :tests, only: [:index, :show] do
+  resources :tests, only: [:index] do
     resources :questions, except: [:index, :show], shallow: true do
       resources :answers, except: [:index, :show], shallow: true
     end
@@ -15,5 +15,13 @@ Rails.application.routes.draw do
 
   resources :test_passages, only: [:show, :update] do
     get 'result', on: :member
+  end
+
+  namespace :admin do
+    resources :tests do
+      resources :questions, except: [:index, :show], shallow: true do
+        resources :answers, except: [:index, :show], shallow: true
+      end
+  end
   end
 end
