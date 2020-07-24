@@ -2,13 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.question-form {
+.question {
   h1 {
     margin-bottom: 50px;
 
     color: darkgreen;
   }
 
+  .question__info {
+    margin-bottom: 50px;
+
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
+.question-form {
   label {
     display: block;
     margin-bottom: 10px;
