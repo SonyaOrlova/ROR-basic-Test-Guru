@@ -1,0 +1,26 @@
+<nav> <%= link_to 'На главную страницу', main_page_path %> </nav>
+
+<div class='test-form'>
+  <%= form_with model: [:admin, @test], local: true do |form| %>
+    <h1> Создание теста </h1>
+    
+    <%= render 'shared/resource_errors', resource: @test %>
+
+    <p>
+      <%= form.label :title  %>
+      <%= form.text_area :title, id: :test_title  %>
+    </p>
+
+    <p>
+      <%= form.label :level  %>
+      <%= form.number_field :level, id: :test_level %>
+    </p>
+
+    <p>
+      <%= form.label :category_id  %>
+      <%= form.collection_select :category_id, Category.all, :id, :title %>
+    </p>
+
+    <p> <%= form.submit 'Создать' %>
+  <% end %>
+</div>

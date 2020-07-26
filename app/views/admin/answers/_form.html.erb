@@ -1,0 +1,17 @@
+<div class='answer-form'>
+  <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
+    <%= render 'shared/resource_errors', resource: @answer %>
+
+    <p>
+      <%= form.label :body, 'Формулировка ответа'  %>
+      <%= form.text_area :body, id: :answer_body  %>
+    </p>
+
+    <p class='answer-form__checkbox'>
+      <%= form.label :is_correct, 'Правильный ответ'  %>
+      <%= form.check_box  :is_correct, id: :answer_is_correct  %>
+    </p>
+
+    <p> <%= form.submit submit_title %> </p>
+  <% end %>
+</div>

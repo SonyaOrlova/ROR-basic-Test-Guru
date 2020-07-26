@@ -1,0 +1,20 @@
+<div class='tests'>
+  <h1> Тесты: </h1>
+
+  <% @tests.each do |test| %>
+    <div class='tests__item'>
+        <h2> <%= test.title %> </h2>
+
+        <p> Количество вопросов в тесте - <b><%= test.questions.count %></b> </p>
+        <p> Автор теста - <b><%= test.author.first_name.capitalize %> <%= test.author.last_name.capitalize %></b> </p>
+        
+        <p class='test__actions'>
+          <%= link_to 'Пройти тест', start_test_path(test), method: :post %> |
+          <%= link_to 'Редактировать тест', admin_test_path(test) %> |
+          <%= link_to 'Удалить тест', admin_test_path(test), method: :delete %>
+        </p>
+    </div>
+  <% end %>
+
+  <p class='test__new'> <%= link_to 'Добавить новый тест', new_admin_test_path(@test) %> </p>
+</div>

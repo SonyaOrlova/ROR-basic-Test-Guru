@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RORBasicTestGuru</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <%= render 'layouts/profile' %>
+    </header>
+
+    <%= render 'admin/panel' %>
+
+    <main>
+      <div class='flash'>
+        <%= flash_messages %>
+      </div>
+
+      <%= yield %>
+    </main>
+
+    <footer>
+      <p> © <%= current_year %> </p>
+      <p> <%= github_url('Тест Гуру', 'SonyaOrlova', 'ROR-basic-Test-Guru') %> </p>
+      <p> Учебный проект в онлайн-школе <%= link_to 'Thinknetica', 'https://thinknetica.com/', target: '_blank' %> </p>
+    </footer>
+  </body>
+</html>

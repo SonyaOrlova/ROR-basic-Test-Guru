@@ -3,15 +3,9 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
-  match 'signup' => 'users#new', :as => :signup, :via => 'get'
-  match 'login' => 'sessions#new', :as => :login, :via => 'get'
+  devise_for :users
 
-  delete :logout, to: 'sessions#destroy'
-  
-  resources :users, only: :create
-  resources :sessions, only: :create
-
-  resources :tests, only: [:index, :show] do
+  resources :tests, only: [:index] do
     resources :questions, except: [:index, :show], shallow: true do
       resources :answers, except: [:index, :show], shallow: true
     end
@@ -21,5 +15,13 @@ Rails.application.routes.draw do
 
   resources :test_passages, only: [:show, :update] do
     get 'result', on: :member
+  end
+
+  namespace :admin do
+    resources :tests do
+      resources :questions, except: [:index, :show], shallow: true do
+        resources :answers, except: [:index, :show], shallow: true
+      end
+  end
   end
 end
