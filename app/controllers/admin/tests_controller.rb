@@ -17,7 +17,7 @@ class Admin::TestsController < Admin::BaseController
     @test = current_user.created_tests.new(test_params)
 
     if @test.save
-      redirect_to admin_tests_path, notice: "Тест «#{@test.title}» был успешно создан"
+      redirect_to admin_tests_path, notice: t('.done', title: @test.title)
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Admin::TestsController < Admin::BaseController
   def destroy
     @test.destroy
 
-    redirect_to admin_tests_path, notice: "Тест «#{@test.title}» был успешно удален"
+    redirect_to admin_tests_path, notice: t('.done', title: @test.title)
   end
 
   def start

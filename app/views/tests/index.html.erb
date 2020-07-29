@@ -1,14 +1,14 @@
 <div class='tests'>
-  <h1> Тесты: </h1>
+  <h1> <%= t('.header') %> </h1>
 
   <% @tests.each do |test| %>
     <div class='tests__item'>
         <h2> <%= test.title %> </h2>
 
-        <p> Количество вопросов в тесте - <b><%= test.questions.count %></b> </p>
+        <p> <%= t('.info') %> - <b><%= test.questions.count %></b> </p>
         
         <p class='test__actions'>
-          <%= link_to 'Пройти тест', start_test_path(test), method: :post %>
+          <%= link_to t('.start'), start_test_path(test), method: :post %>
         </p>
     </div>
   <% end %>

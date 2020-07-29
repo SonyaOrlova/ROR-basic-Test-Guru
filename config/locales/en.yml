@@ -30,4 +30,43 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "hello world"
+  main-page: "Main page"
+  shared:
+    resource_errors:
+      info:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+  helpers:
+    select:
+      prompt: "Select"
+    submit:
+      test:
+        create: "Create"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+  tests:
+    index:
+      header: "Tests"
+      info: "Questions count"
+      start: "Start test"
+  admin:
+    tests:
+      index:
+        header: "Tests"
+        info: "Questions count"
+        author: "Author"
+        start: "Start test"
+        edit: "Edit"
+        delete: "Delete"
+        add: "Add test"
+      new:
+        header: "Test creation"
+        submit: "Create"
+      create:
+        done: "Test «%{title}» was successfully created"
+      destroy:
+        done: "Test «%{title}» was successfully deleted"
