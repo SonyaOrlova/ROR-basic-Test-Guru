@@ -1,0 +1,41 @@
+ru:
+  main-page: "Главная страница"
+  shared:
+    resource_errors:
+      info:
+        one: "Обнаружена %{count} ошибка"
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        other: "Обнаружено %{count} ошибки"
+  helpers:
+    select:
+      prompt: "Выберите"
+    submit:
+      test:
+        create: "Создать"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+  tests:
+    index:
+      header: "Тесты"
+      info: "Количество вопросов"
+      start: "Пройти тест"
+  admin:
+    tests:
+      index:
+        header: "Тесты"
+        info: "Количество вопросов"
+        author: "Автор"
+        start: "Пройти тест"
+        edit: "Редактировать"
+        delete: "Удалить"
+        add: "Добавить тест"
+      new:
+        header: "Создание теста"
+      create:
+        done: "Тест «%{title}» был успешно создан"
+      destroy:
+        done: "Тест «%{title}» был успешно удален"

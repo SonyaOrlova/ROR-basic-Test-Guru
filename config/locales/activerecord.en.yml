@@ -1,0 +1,6 @@
+en:
+  activerecord:
+    attributes:
+      tests:
+        title: "Title"
+        level: "Level"

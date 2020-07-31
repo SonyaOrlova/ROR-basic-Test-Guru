@@ -1,0 +1,6 @@
+ru:
+  activerecord:
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
