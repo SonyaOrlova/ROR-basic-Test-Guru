@@ -1,1 +1,16 @@
 @import "bootstrap/scss/bootstrap";
+
+@import "page";
+
+@import "main";
+@import "footer";
+
+@import "tests";
+@import "questions";
+@import "answers";
+
+@import "test_passages";
+
+@import "resource-errors";
+
+@import "new_user";
