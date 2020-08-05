@@ -23,6 +23,10 @@ ru:
       header: "Тесты"
       info: "Количество вопросов"
       start: "Пройти тест"
+  test_passages:
+    gist:
+      success: "Gist успешно сохранен - %{gist_link}"
+      fail: "Ошибка сохранения gist"
   admin:
     tests:
       index:
@@ -39,3 +43,7 @@ ru:
         done: "Тест «%{title}» был успешно создан"
       destroy:
         done: "Тест «%{title}» был успешно удален"
+  services:
+    gist_question_service:
+      gist_params:
+        description: "Вопрос из %{test_title} от Тест Гуру"

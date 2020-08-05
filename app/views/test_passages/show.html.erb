@@ -16,6 +16,7 @@
       </p>
     <% end %>
 
+    <p> <%= link_to 'Сохранить вопрос в gist github', gist_test_passage_path(@test_passage), method: :post %> </p>
     <p> <%= form.submit 'Выбрать' %> </p>
   <% end %>
 </div>
