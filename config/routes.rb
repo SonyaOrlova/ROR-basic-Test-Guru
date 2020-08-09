@@ -23,6 +23,8 @@ Rails.application.routes.draw do
       resources :questions, except: [:index, :show], shallow: true do
         resources :answers, except: [:index, :show], shallow: true
       end
-  end
+    end
+
+    resources :gists, only: [:index]
   end
 end

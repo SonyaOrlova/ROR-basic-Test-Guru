@@ -1,4 +1,6 @@
 class GistQuestionService
+  attr_reader :client
+
   def initialize(question, client=default_client)
     @question = question
     @test = @question.test
@@ -21,7 +23,7 @@ class GistQuestionService
   private
 
   def default_client
-    Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
+    Octokit::Client.new(access_token: 'ae09f2ba216833de2aa665f0a09461229f595466')
   end
 
   def gist_params
@@ -49,7 +51,7 @@ class GistQuestionService
     end
 
     def success?
-      !!@response
+      !!@response&.id
     end
   end
 end

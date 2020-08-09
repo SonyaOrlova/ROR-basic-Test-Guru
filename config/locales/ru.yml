@@ -43,7 +43,8 @@ ru:
         done: "Тест «%{title}» был успешно создан"
       destroy:
         done: "Тест «%{title}» был успешно удален"
-  services:
-    gist_question_service:
-      gist_params:
-        description: "Вопрос из %{test_title} от Тест Гуру"
+    gists:
+      index:
+        header: 'Созданные gists'
+        question: 'Вопрос'
+        author: 'Автор'
