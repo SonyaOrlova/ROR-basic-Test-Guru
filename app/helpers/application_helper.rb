@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def flash_messages
-    safe_join(flash.map { |type, message| content_tag :p, message, class: "flash_#{type}" })
+    safe_join(flash.map { |type, message| content_tag :p, message.html_safe, class: "flash_#{type}" })
   end
 
   def main_page_path

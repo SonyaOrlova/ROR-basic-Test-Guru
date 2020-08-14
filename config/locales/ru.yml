@@ -23,6 +23,10 @@ ru:
       header: "Тесты"
       info: "Количество вопросов"
       start: "Пройти тест"
+  test_passages:
+    gist:
+      success: "Gist успешно сохранен - %{gist_link}"
+      fail: "Ошибка сохранения gist"
   admin:
     tests:
       index:
@@ -39,3 +43,8 @@ ru:
         done: "Тест «%{title}» был успешно создан"
       destroy:
         done: "Тест «%{title}» был успешно удален"
+    gists:
+      index:
+        header: 'Созданные gists'
+        question: 'Вопрос'
+        author: 'Автор'

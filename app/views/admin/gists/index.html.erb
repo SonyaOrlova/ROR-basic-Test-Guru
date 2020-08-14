@@ -1,0 +1,21 @@
+<div class='container'>
+    <h2 align='center' style='margin-bottom: 25px'> <%= t('.header') %> </h2>
+    <table class='table table-sm table-bordered' >
+      <thead class='text-light bg-dark'>
+      <tr>
+        <th scope='col'> <%= t('.question') %> </th>
+        <th scope='col'> Gist URL </th>
+        <th scope='col'> <%= t('.author') %> </th>
+      </tr>
+      </thead>
+      <tbody>
+        <% @gists.each do |gist| %>
+          <tr>
+            <td> <%= truncate(gist.question.body, length: 25, escape: false) %> </td>
+            <td> <%= link_to gist.gist_url, gist.gist_url, target: '_blank' %> </td>
+            <td> <%= gist.user.email %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>

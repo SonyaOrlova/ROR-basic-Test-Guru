@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   resources :test_passages, only: [:show, :update] do
     get 'result', on: :member
+    post 'gist', on: :member
   end
 
   namespace :admin do
@@ -22,6 +23,8 @@ Rails.application.routes.draw do
       resources :questions, except: [:index, :show], shallow: true do
         resources :answers, except: [:index, :show], shallow: true
       end
-  end
+    end
+
+    resources :gists, only: [:index]
   end
 end

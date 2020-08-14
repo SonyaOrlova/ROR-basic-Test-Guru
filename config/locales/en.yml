@@ -53,6 +53,10 @@ en:
       header: "Tests"
       info: "Questions count"
       start: "Start test"
+  test_passages:
+    gist:
+      success: "Gist was successfully created - %{gist_link}"
+      fail: "Error occured while creating gist"
   admin:
     tests:
       index:
@@ -70,3 +74,13 @@ en:
         done: "Test «%{title}» was successfully created"
       destroy:
         done: "Test «%{title}» was successfully deleted"
+    gists:
+      index:
+        header: 'Created gists'
+        question: 'Question'
+        author: 'Author'
+  services:
+    gist_question_service:
+      gist_params:
+        description: "A question about %{test_title} from Test Guru"
+
