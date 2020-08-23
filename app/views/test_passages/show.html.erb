@@ -7,6 +7,10 @@
     Вопрос <%= @test_passage.current_question_serial_number %> / <%= @test_passage.test.questions.count %>
   </p>
 
+  <div class="test-passage__progress-box">
+    <%= content_tag :p, '', class: 'test-passage__progress', data: { test_progress: @test_passage.test_progress } %>
+  </div>
+
   <h2> <%= @test_passage.current_question.body %> </h2>
   <%= form_with url: test_passage_path(@test_passage), method: :put, local: true do |form| %>
     <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body do |cb|%>
