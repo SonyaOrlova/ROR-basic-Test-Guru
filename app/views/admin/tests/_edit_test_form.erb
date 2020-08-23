@@ -1,0 +1,9 @@
+<%= form_with model: [:admin, test],
+              url: edit_inline_admin_test_path(test),
+              local: true,
+              class: 'edit-test-form hidden',
+              data: { test_id: test.id } do |form| %>
+
+  <%= form.text_field :title, class: 'form-control'  %>
+  <%= form.submit 'Ok', class: 'btn btn-secondary' %>
+<% end %>

@@ -1,11 +1,10 @@
 class Admin::TestsController < Admin::BaseController
-  before_action :test, only: [:show, :destroy, :start]
+  before_action :tests, only: [:index, :edit_inline]
+  before_action :test, only: [:show, :edit_inline, :destroy, :start]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
-  def index
-    @tests = Test.all
-  end
+  def index; end
 
   def show; end
 
@@ -20,6 +19,14 @@ class Admin::TestsController < Admin::BaseController
       redirect_to admin_tests_path, notice: t('.done', title: @test.title)
     else
       render :new
+    end
+  end
+
+  def edit_inline
+    if @test.update(test_params)
+      redirect_to admin_tests_path, notice: t('.done', title: @test.title)
+    else
+      render :index
     end
   end
 
@@ -43,6 +50,10 @@ class Admin::TestsController < Admin::BaseController
 
   def test
     @test = Test.find(params[:id])
+  end
+
+  def tests
+    @tests = Test.all
   end
 
   def test_params

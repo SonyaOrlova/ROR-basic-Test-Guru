@@ -1,20 +1,24 @@
-<div class='tests'>
-  <h1> <%= t('.header') %> </h1>
-  
-  <% @tests.each do |test| %>
-    <div class='tests__item'>
-        <h2> <%= test.title %> </h2>
+<div class='tests container'>
+    <h2 align='center' style='margin-bottom: 25px'> <%= t('.header') %> </h2>
 
-        <p> <%= t('.info') %> - <b><%= test.questions.count %></b> </p>
-        <p> <%= t('.author') %> - <b><%= test.author.first_name.capitalize %> <%= test.author.last_name.capitalize %></b> </p>
-        
-        <p class='test__actions'>
-          <%= link_to t('.start'), start_test_path(test), method: :post %> |
-          <%= link_to t('.edit'), admin_test_path(test) %> |
-          <%= link_to t('.delete'), admin_test_path(test), method: :delete %>
-        </p>
-    </div>
-  <% end %>
+    <%= render 'shared/resource_errors', resource: @test %>
 
-  <p class='test__new'> <%= link_to t('.add'), new_admin_test_path(@test) %> </p>
+    <table class='table table-sm borderless' >
+      <tbody class='content'>
+        <% @tests.each do |test| %>
+          <tr>
+            <td class='align-middle text-center'>
+              <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
+              <%= render 'edit_test_form', test: test %>
+            </td>
+            <td class='align-middle text-center'> 
+              <%= link_to t('.start'), start_test_path(test), method: :post %> |
+              <%= link_to 'Change title', '#', class: 'edit-test-form-link', data: { test_id: test.id } %> |
+              <%= link_to t('.edit'), admin_test_path(test) %> |
+              <%= link_to t('.delete'), admin_test_path(test), method: :delete %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 </div>

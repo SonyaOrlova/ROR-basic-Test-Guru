@@ -72,6 +72,8 @@ en:
         submit: "Create"
       create:
         done: "Test «%{title}» was successfully created"
+      update:
+        done: "Test «%{title}» was successfully updated"
       destroy:
         done: "Test «%{title}» was successfully deleted"
     gists:
