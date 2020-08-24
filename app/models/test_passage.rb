@@ -26,6 +26,10 @@ class TestPassage < ApplicationRecord
     (correct_questions_count.to_f / questions.size * 100).round
   end
 
+  def test_progress
+    ((current_question_serial_number.to_f - 1) / questions.size * 100).round
+  end
+
   def success?
     test_result_rate >= SUCCESS_RATE_LEVEL
   end

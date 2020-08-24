@@ -41,6 +41,8 @@ ru:
         header: "Создание теста"
       create:
         done: "Тест «%{title}» был успешно создан"
+      update:
+        done: "Тест «%{title}» был успешно обновлен"
       destroy:
         done: "Тест «%{title}» был успешно удален"
     gists:

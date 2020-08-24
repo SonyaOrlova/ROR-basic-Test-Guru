@@ -32,6 +32,18 @@
   .test-passage__test-info {
     margin-bottom: 30px;
   }
+
+  .test-passage__progress-box {
+    height: 30px;
+    width: 100px;
+    border: 1px solid black;
+    margin-bottom: 30px;
+  }
+
+  .test-passage__progress {
+    height: 100%;
+    background-color: darkgreen;
+  }
 }
 
 .test-passage-result {

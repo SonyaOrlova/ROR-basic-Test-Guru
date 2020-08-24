@@ -24,4 +24,157 @@
       }
     }
   }
+
+  .edit-test-form {
+    display: flex;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  input[type="text"] {
+    margin-left: 10px;
+  }
+
+  input[type="submit"] {
+    margin-left: 10px;
+  }
 }
+
+.test {
+  h1 {
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    margin-bottom: 25px;
+
+    font-size: 20px;
+    color: brown;
+  }
+
+  h3 {
+    margin-bottom: 15px;
+
+    font-size: 16px;
+  }
+
+  .test__title {
+    color: darkgreen;
+  }
+
+  .test__question {
+    border-bottom: 2px solid black;
+
+    &:not(:last-child) {
+      margin-bottom: 25px;
+    }
+  }
+
+  .test__question-actions {
+    margin: 25px 0 5px;
+
+    a {
+      color: gray;
+    }
+  }
+
+  .test__question-new {
+    float: right;
+
+    padding: 10px;
+
+    background-color: darkgreen;
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    a {
+      color: white;
+    }
+  }
+
+  .test__question-answers {
+    li:not(:first-child) {
+      margin-top: 15px;
+    }
+  }
+
+  .test__question-answers-actions {
+    margin: 5px 0;
+
+    font-size: 12px;
+
+    a {
+      color: gray;
+    }
+  }
+
+  .test__question-answer-new {
+    display: inline-block;
+
+    padding: 5px;
+    margin-bottom: 20px;
+
+    font-size: 12px;
+
+    background-color: darkgreen;
+
+    border: 1px solid black;
+    border-radius: 5px;
+
+    a {
+      color: white;
+    }
+  }
+}
+
+.test-form {
+  h1 {
+    margin-bottom: 50px;
+
+    color: darkgreen;
+  }
+
+  label {
+    display: block;
+    margin: 10px 0;
+
+    font-size: 12px;
+    color: gray;
+  }
+
+  textarea {
+    width: 100%;
+    height: 52px;
+
+    padding: 10px;
+    box-sizing: border-box;
+
+    resize: none;
+  }
+
+  input:not([type="submit"]), select {
+    width: 200px;
+    height: 30px;
+
+    padding: 5px;
+    box-sizing: border-box;
+
+    resize: none;
+  }
+
+  input[type="submit"] {
+    padding: 10px;
+    margin-top: 30px;
+
+    color: white;
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    background-color: darkgreen;
+  }
+}
+
