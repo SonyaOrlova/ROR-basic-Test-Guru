@@ -64,9 +64,11 @@ en:
         info: "Questions count"
         author: "Author"
         start: "Start test"
+        update: "Change title"
         edit: "Edit"
         delete: "Delete"
         add: "Add test"
+        cancel: "Cancel"
       new:
         header: "Test creation"
         submit: "Create"

@@ -14,4 +14,9 @@ module ApplicationHelper
   def main_page_path
     current_user.admin? ? admin_tests_path : root_path
   end
+  
+  def global_locale
+    @translations ||= I18n.backend.send(:translations)
+    @translations[I18n.locale].with_indifferent_access
+  end
 end

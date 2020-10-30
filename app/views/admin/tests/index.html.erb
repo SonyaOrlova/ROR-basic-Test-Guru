@@ -6,14 +6,14 @@
     <table class='table table-sm borderless' >
       <tbody class='content'>
         <% @tests.each do |test| %>
-          <tr>
+          <tr class='test'>
             <td class='align-middle text-center'>
               <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
               <%= render 'edit_test_form', test: test %>
             </td>
-            <td class='align-middle text-center'> 
+            <td class='align-middle text-right'> 
               <%= link_to t('.start'), start_test_path(test), method: :post %> |
-              <%= link_to 'Change title', '#', class: 'edit-test-form-link', data: { test_id: test.id } %> |
+              <%= link_to t('.update'), '#', class: 'edit-test-form-link', data: { test_id: test.id } %> |
               <%= link_to t('.edit'), admin_test_path(test) %> |
               <%= link_to t('.delete'), admin_test_path(test), method: :delete %>
             </td>

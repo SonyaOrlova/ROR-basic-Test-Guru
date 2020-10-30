@@ -31,4 +31,8 @@
       <p> Учебный проект в онлайн-школе <%= link_to 'Thinknetica', 'https://thinknetica.com/', target: '_blank' %> </p>
     </footer>
   </body>
+
+  <script type="text/javascript">
+    window.I18n = <%= global_locale.to_json.html_safe %>
+  </script>
 </html>

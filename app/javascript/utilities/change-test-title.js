@@ -7,11 +7,11 @@ function editTest(control) {
   if (changeTestTitleFormEl.classList.contains('hidden')) {
     testTitleEl.classList.add('hidden');
     changeTestTitleFormEl.classList.remove('hidden');
-    control.textContent = 'Cancel'
+    control.textContent = I18n.admin.tests.index.cancel;
   } else {
     testTitleEl.classList.remove('hidden');
     changeTestTitleFormEl.classList.add('hidden');
-    control.textContent = 'Change title'
+    control.textContent = I18n.admin.tests.index.update;
   }
 };
 
