@@ -21,7 +21,7 @@ function editTestHandler(event) {
   editTest(event.currentTarget);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   const controls = document.querySelectorAll('.edit-test-form-link');
 
   if (!controls.length) return;

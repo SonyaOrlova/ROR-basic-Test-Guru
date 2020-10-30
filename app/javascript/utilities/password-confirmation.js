@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   const passwordInputEl = document.querySelector('#user_password');
   const passwordConfirmationInputEl = document.querySelector('#user_password_confirmation');
 

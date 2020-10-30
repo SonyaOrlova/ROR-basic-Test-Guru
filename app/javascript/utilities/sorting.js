@@ -23,7 +23,7 @@ const sortRows = () => {
   table.tBodies[0].append(...sortedRows);
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   const controlEl = document.querySelector('.sort-control');
 
   if (!controlEl) return;
