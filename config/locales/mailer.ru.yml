@@ -2,3 +2,5 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы только что прошли тест!"
+    send_feedback:
+      subject: "Новая обратная связь!"
