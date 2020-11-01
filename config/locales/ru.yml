@@ -1,5 +1,6 @@
 ru:
   main-page: "Главная страница"
+  feedback: "Обратная связь"
   shared:
     resource_errors:
       info:
@@ -27,6 +28,11 @@ ru:
     gist:
       success: "Gist успешно сохранен - %{gist_link}"
       fail: "Ошибка сохранения gist"
+  feedbacks:
+    new:
+      submit: 'Отправить'
+    create:
+      success: 'Обратная связь была успешно отправлена'
   admin:
     tests:
       index:

@@ -1,0 +1,14 @@
+<nav> <%= link_to 'На главную страницу', main_page_path %> </nav>
+
+<div class='feedback'>
+  <%= render 'shared/resource_errors', resource: @feedback %>
+
+  <%= form_with model: @feedback, local: true do |form| %>
+    <p>
+      <%= form.label :body, t('feedback')  %>
+      <%= form.text_area :body, id: :feedback_body %>
+    </p>
+
+    <%= form.submit t('.submit'), class: 'btn btn-secondary'%>
+  <% end %>
+</div>

@@ -32,6 +32,7 @@
 en:
   hello: "hello world"
   main-page: "Main page"
+  feedback: 'Feedback'
   shared:
     resource_errors:
       info:
@@ -57,6 +58,11 @@ en:
     gist:
       success: "Gist was successfully created - %{gist_link}"
       fail: "Error occured while creating gist"
+  feedbacks:
+    new:
+      submit: 'Send'
+    create:
+      success: 'Feedback was successfully sent'
   admin:
     tests:
       index:

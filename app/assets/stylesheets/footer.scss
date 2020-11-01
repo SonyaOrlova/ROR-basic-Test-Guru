@@ -11,9 +11,7 @@ footer {
   background-color: gainsboro;
 
   p {
-    &:first-child {
-      margin-right: 15px;
-    }
+    margin-left: 15px;
 
     &:last-child {
       width: 100%;
@@ -27,5 +25,11 @@ footer {
     a {
       color: darkblue;
     }
+  }
+
+  .feedback-link {
+    margin-right: auto;
+    color: darkgreen;
+    font-weight: 800;
   }
 }
