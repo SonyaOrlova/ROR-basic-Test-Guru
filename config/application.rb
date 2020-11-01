@@ -16,6 +16,8 @@ module RORBasicTestGuru
     config.i18n.enforce_available_locales = false
     config.i18n.default_locale = :ru
 
+    config.x.admin.email = 'sonya.orlova.ror@gmail.com'
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

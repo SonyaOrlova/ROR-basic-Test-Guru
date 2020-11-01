@@ -8,7 +8,16 @@
 
 [User, Answer, Question, Test, Category].each(&:destroy_all)
 
-user = User.create({ first_name: 'Admin', last_name: 'Admin', email: 'admin@mail.ru', password: 123456, type: 'Admin' })
+admin = User.new({
+  first_name: 'Admin',
+  last_name: 'Admin',
+  email: Rails.configuration.x.admin.email,
+  password: 123456,
+  type: 'Admin'
+})
+
+admin.skip_confirmation!
+admin.save!
 
 categories = [
   {
@@ -64,7 +73,7 @@ categories.each do |c|
   category = Category.create({ title: c[:title] })
 
   c[:tests].each do |t|
-    test = category.tests.create({ title: t[:title], level: t[:level], author_id: user.id })
+    test = category.tests.create({ title: t[:title], level: t[:level], author_id: admin.id })
 
     t[:questions].each do |q|
       question = test.questions.create({ body: q[:body] })

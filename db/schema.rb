@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_10_30_173810) do
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
     t.boolean "is_correct", default: true, null: false
-    t.integer "question_id", null: false
+    t.bigint "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 2020_10_30_173810) do
   end
 
   create_table "gists", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "question_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "question_id", null: false
     t.string "gist_url", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -50,16 +50,16 @@ ActiveRecord::Schema.define(version: 2020_10_30_173810) do
 
   create_table "questions", force: :cascade do |t|
     t.string "body", null: false
-    t.integer "test_id", null: false
+    t.bigint "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["test_id"], name: "index_questions_on_test_id"
   end
 
   create_table "test_passages", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "test_id", null: false
-    t.integer "current_question_id"
+    t.bigint "user_id", null: false
+    t.bigint "test_id", null: false
+    t.bigint "current_question_id"
     t.integer "correct_questions_count", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(version: 2020_10_30_173810) do
   create_table "tests", force: :cascade do |t|
     t.string "title", default: "general", null: false
     t.integer "level", default: 0, null: false
-    t.integer "category_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "author_id", null: false
