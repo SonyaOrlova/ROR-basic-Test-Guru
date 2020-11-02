@@ -70,6 +70,7 @@ en:
         info: "Questions count"
         author: "Author"
         start: "Start test"
+        new: "Create new test"
         update: "Change title"
         edit: "Edit"
         delete: "Delete"

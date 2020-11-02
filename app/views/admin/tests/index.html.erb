@@ -12,7 +12,10 @@
               <%= render 'edit_test_form', test: test %>
             </td>
             <td class='align-middle text-right'> 
-              <%= link_to t('.start'), start_test_path(test), method: :post %> |
+              
+              <% if isFilled?(test) %>
+                <%= link_to t('.start'), start_test_path(test), method: :post %> |
+              <% end %>
               <%= link_to t('.update'), '#', class: 'edit-test-form-link', data: { test_id: test.id } %> |
               <%= link_to t('.edit'), admin_test_path(test) %> |
               <%= link_to t('.delete'), admin_test_path(test), method: :delete %>
@@ -21,4 +24,6 @@
         <% end %>
       </tbody>
     </table>
+
+    <%= link_to t('.new'), new_admin_test_path, class: 'tests_new' %>
 </div>
