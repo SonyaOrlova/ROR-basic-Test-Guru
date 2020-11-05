@@ -1,0 +1,133 @@
+en:
+  logo: Test Guru.
+  main-page: Main page
+  admin-panel: Admin space
+  back: Back
+  sign-up: Sign up
+  login: Login
+  logout: Logout
+  project-info: Project at school
+  feedback: Feedback
+  activerecord:
+    attributes:
+      test:
+        title: Title
+        level: Level
+        category: Category
+        category_id: Category
+      question:
+        body: Question
+      answer:
+        body: Answer
+        is_correct: Is correct
+      feedback:
+        body: Feedback
+  shared:
+    errors:
+      info:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+  tests:
+    index:
+      header: Tests
+      title: Title
+      level: Level
+      questions-count: Questions count
+      start: Start
+  test_passages:
+    show:
+      title: Passing test
+      info: Question
+      submit: Submit
+      github_gist: Create github gist
+    update:
+      no_answer_given: Select answer
+    result:
+      success: Test success
+      fail: Test fail
+    gist:
+      success: Gist was successfully created - %{gist_link}
+      fail: Error occured while creating gist
+  feedbacks:
+    new:
+      submit: Send
+    create:
+      success: Feedback was successfully sent
+  admin:
+    nav:
+      gists_list: Gists list
+      tests_list: Tests list
+    tests:
+      index:
+        header: Tests
+        title: Title
+        level: Level
+        questions-count: Questions count
+        start: Start
+        new: Create new test
+        edit: Edit
+        delete: Delete
+        update-inline: Change
+        cancel: Cancel
+      new:
+        header: New test
+      edit:
+        header: Edit test
+        question-edit: Edit question
+        question-destroy: Destroy question
+        question-new: Add question
+        answers: Answers
+        answer-new: Add answer
+        answers-empty: No answers
+        answer-edit: Edit answer
+        answer-destroy: Destroy answer
+      create:
+        done: Test «%{title}» was successfully created
+      update_inline:
+        done: Test «%{title}» was successfully updated
+      destroy:
+        done: Test «%{title}» was successfully deleted
+      form:
+        submit: Save
+    questions:
+      new:
+        header: Create new question
+        info: For test
+      edit:
+        header: Edit question
+        info: For test
+      create:
+        done: Question «%{question}» for test «%{test}» was successfully created
+      update:
+        done: Question «%{question}» for test «%{test}» was successfully updated
+      destroy:
+        done: Question «%{question}» for test «%{test}» was successfully destroyed
+      form:
+        submit: Save
+    answers:
+      new:
+        header: New answer
+        info_test: For test
+        info_question: For question
+      edit:
+        header: Edit answer
+        info_test: For test
+        info_question: For question
+      create:
+        done: Answer «%{answer}» for question «%{question}» was successfully created
+      update:
+        done: Answer «%{answer}» for question «%{question}» was successfully updated
+      destroy:
+        done: Answer «%{answer}» for question «%{question}» was successfully destroyed
+      form:
+        submit: Save     
+    gists:
+      index:
+        header: Created gists
+        question: Question
+        author: Author
+  # services:
+  #   gist_question_service:
+  #     gist_params:
+  #       description: A question about %{test_title} from Test Guru
+

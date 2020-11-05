@@ -1,11 +1,11 @@
-<nav> <%= link_to 'На страницу теста', admin_test_path(@question.test) %> </nav>
+<%= render 'shared/errors', resource: @question %>
 
-<div class='question'>
-  <h1> <%= question_header %> </h1>
+<div class="form">
+  <h1 class="form__title"> <%= t('.header') %> </h1>
 
-    <div class='question__info'>
-      <p> Тест: <span> <%= @question.test.title %> </span> </p>
-    </div>
+  <div class="form__info">
+    <p> <%= t('.info') %> : <span> <%= @question.test.title %> </span> </p>
+  </div>
 
-  <%= render 'form', submit_title: 'Сохранить' %>
+  <%= render 'form' %>
 </div>

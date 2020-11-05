@@ -1,197 +1,160 @@
-// Place all the styles related to the tests controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 .tests {
-  .pointer {
-    cursor: pointer;
-  }
-
-  .arrow {
-    display: none;
-  }
-  
-  .table {
-    &.asc {
-      .arrow-up {
-        display: inline-block;
-      }
-    }
-
-    &.desc {
-      .arrow-down {
-        display: inline-block;
-      }
-    }
-  }
-
-  .edit-test-form {
-    display: flex;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  input[type="text"] {
-    margin-left: 10px;
-  }
-
-  input[type="submit"] {
-    margin-left: 10px;
-  }
-}
-
-.test {
-  h1 {
-    margin-bottom: 50px;
-  }
-
-  h2 {
-    margin-bottom: 25px;
-
-    font-size: 20px;
-    color: brown;
-  }
-
-  h3 {
-    margin-bottom: 15px;
-
-    font-size: 16px;
-  }
-
-  .test__title {
-    color: darkgreen;
-  }
-
-  .test__question {
-    border-bottom: 2px solid black;
-
-    &:not(:last-child) {
-      margin-bottom: 25px;
-    }
-  }
-
-  .test__question-actions {
-    margin: 25px 0 5px;
-
-    a {
-      color: gray;
-    }
-  }
-
-  .test__question-new {
-    float: right;
-
-    padding: 10px;
-
-    background-color: darkgreen;
-
-    border: 1px solid black;
-    border-radius: 10px;
-
-    a {
-      color: white;
-    }
-  }
-
-  .test__question-answers {
-    li:not(:first-child) {
-      margin-top: 15px;
-    }
-  }
-
-  .test__question-answers-actions {
-    margin: 5px 0;
-
-    font-size: 12px;
-
-    a {
-      color: gray;
-    }
-  }
-
-  .test__question-answer-new {
+  &__action {
     display: inline-block;
 
-    padding: 5px;
-    margin-bottom: 20px;
+    float: right;
 
-    font-size: 12px;
+    padding: 15px;
 
-    background-color: darkgreen;
+    margin-top: 30px;
 
-    border: 1px solid black;
+    background-color: #d3d3d3;
+
+    border: 1px solid #696969;
     border-radius: 5px;
+  }
 
-    a {
-      color: white;
+  &__title-th {
+    cursor: pointer;
+    
+    &_asc {
+      .arrow-down {
+        display: none;
+      }
+    }
+
+    &_desc {
+      .arrow-up {
+        display: none;
+      }
+    }
+  }
+
+  .tests-item {
+    &__title-td {
+      width: 250px;
+    }
+
+    &__action {
+      font-weight: 700;
+
+      &_start {
+        color: #336b87;
+      }
+    }
+
+    &__update-inline-field {
+      width: 100%;
+
+      padding: 5px 10px;
+
+      box-sizing: border-box;
+
+      border: 1px solid #696969;
+      border-radius: 5px;
+    }
+
+    &__update-inline-btn {
+      display: inline-block;
+
+      float: right;
+
+      padding: 5px;
+
+      margin-top: 5px;
+
+      background-color: #d3d3d3;
+
+      border: 1px solid #696969;
+      border-radius: 5px;
     }
   }
 }
 
-.test-form {
-  h1 {
-    margin-bottom: 50px;
+.test-edit {
+  &__title {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
 
-    color: darkgreen;
+    text-align: center;
+
+    margin-bottom: 30px;
   }
 
-  label {
-    display: block;
-    margin: 10px 0;
+  &__question {
+    display: flex;
+    flex-direction: column;
 
-    font-size: 12px;
-    color: gray;
+    padding: 15px 0;
+
+    border-top: 1px dashed #696969;
+
+    &_new {
+      padding: 15px;
+
+      margin-top: 30px;
+
+      float: right;
+
+      background-color: #d3d3d3;
+
+      border: 1px solid #696969;
+      border-radius: 5px;
+    }
   }
 
-  textarea {
-    width: 100%;
-    height: 52px;
-
-    padding: 10px;
-    box-sizing: border-box;
-
-    resize: none;
+  &__question-body {
+    margin-bottom: 15px;
   }
 
-  input:not([type="submit"]), select {
-    width: 200px;
-    height: 30px;
+  &__question-actions {
+    font-size: 16px;
+    line-height: 20px;
 
-    padding: 5px;
-    box-sizing: border-box;
+    margin: 25px 0 5px;
 
-    resize: none;
+    align-self: flex-end;
+
+    a {
+      color: #999;
+    }
   }
 
-  input[type="submit"] {
-    padding: 10px;
-    margin-top: 30px;
+  &__answers {
+    margin-bottom: 5px;
 
-    color: white;
+    &_new {
+      font-size: 14px;
+      line-height: 18px;
 
-    border: 1px solid black;
-    border-radius: 10px;
+      align-self: flex-end;
 
-    background-color: darkgreen;
+      padding: 5px;
+
+      margin-bottom: 5px;
+
+      background-color: #d3d3d3;
+
+      border: 1px solid #696969;
+      border-radius: 5px;
+    }
+
+    &_empty {
+      font-weight: 700;
+
+      color: #994433;
+    }
   }
-}
 
-.tests_new {
-  padding: 10px;
-  margin-top: 30px;
+  &__answer-actions {
+    margin: 5px 0;
 
-  display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
 
-  color: white;
-
-  border: 1px solid black;
-  border-radius: 10px;
-
-  background-color: darkgreen;
-}
-
-.test {
-  height: 50px;
+    a {
+      color: #999;
+    }
+  }
 }

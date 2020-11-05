@@ -1,0 +1,18 @@
+<div class="footer">
+  <% if user_signed_in? %>
+
+    <%= link_to t('feedback'), new_feedback_path, class: "footer__feedback" %>
+
+  <% end %>
+
+  <div class="footer__about">
+    <span class="footer__year"> © <%= current_year %> </span>
+
+    <%= link_to t('logo'), github_url('SonyaOrlova', 'ROR-basic-Test-Guru'), target: '_blank', class: 'footer__link' %>
+
+    <p class="project-info">
+      <%= t('project-info') %>
+      <%= link_to 'Thinknetica', 'https://thinknetica.com/', target: '_blank', class: 'footer__link' %>
+    </p>
+  </div>
+</div>

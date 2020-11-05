@@ -1,0 +1,39 @@
+<div class="header">
+  <%= link_to t('logo'), root_path, class: "header__logo" %>
+
+  <% if user_signed_in? %>
+
+    <div class="header__greeting">
+      <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize %>
+    </div>
+
+    <nav class="header__navigation">
+      <% if current_user.admin? %>
+        <%= link_to t('admin-panel'),
+                    admin_tests_path,
+                    class: request.path.start_with?("/admin") ?
+                      "header__admin-panel header__admin-panel_active" :
+                      "header__admin-panel"
+        %>
+      <% end %>
+
+      <%= link_to t('logout'), destroy_user_session_path, method: :delete, class: "header__bar-link" %>
+    </nav>
+
+    <% else %>
+      <nav class="header__navigation">
+        <% if request.path != new_user_session_path %>
+
+          <%= link_to t('login'), new_user_session_path, class: "header__bar-link" %>
+
+        <% end %>
+
+        <% if request.path != new_user_registration_path %>
+
+          <%= link_to t('sign-up'), new_user_registration_path, class: "header__bar-link" %>
+
+        <% end %>
+      </nav>
+    <% end %>
+  </nav>
+</div>

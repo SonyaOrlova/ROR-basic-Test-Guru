@@ -1,0 +1,16 @@
+.errors {
+  border-bottom: 5px double #999;
+
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+
+  &__title {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+    color: #994433;
+  }
+}

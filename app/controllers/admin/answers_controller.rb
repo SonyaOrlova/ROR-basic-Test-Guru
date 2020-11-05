@@ -9,7 +9,7 @@ class Admin::AnswersController < Admin::BaseController
     @answer = @question.answers.new(answer_params)
 
     if @answer.save
-      redirect_to admin_test_path(@question.test), notice: "Ответ «#{@answer.body}» для вопроса «#{@question.body}» был успешно создан"
+      redirect_to edit_admin_test_path(@question.test), notice: t('.done', question: @answer.question.body, answer: @answer.body)
     else
       render :new
     end
@@ -19,7 +19,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def update
     if @answer.update(answer_params)
-      redirect_to admin_test_path(@answer.question.test), notice: "Ответ «#{@answer.body}» для вопроса «#{@answer.question.body}» был успешно изменен"
+      redirect_to edit_admin_test_path(@answer.question.test), notice: t('.done', question: @answer.question.body, answer: @answer.body)
     else
       render :edit
     end
@@ -28,7 +28,7 @@ class Admin::AnswersController < Admin::BaseController
   def destroy
     @answer.destroy
     
-    redirect_to admin_test_path(@answer.question.test), notice: "Ответ «#{@answer.body}» для вопроса «#{@answer.question.body}» был успешно удален"
+    redirect_to edit_admin_test_path(@answer.question.test), notice: t('.done', question: @answer.question.body, answer: @answer.body)
   end
 
   private

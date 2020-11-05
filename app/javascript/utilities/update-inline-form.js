@@ -1,8 +1,8 @@
 function editTest(control) {
   const { testId } = control.dataset;
 
-  const testTitleEl = document.querySelector(`.test-title[data-test-id='${testId}'`);
-  const changeTestTitleFormEl = document.querySelector(`.edit-test-form[data-test-id='${testId}'`);
+  const testTitleEl = document.querySelector(`.tests-item__title[data-test-id='${testId}'`);
+  const changeTestTitleFormEl = document.querySelector(`.tests-item__update-inline-form[data-test-id='${testId}'`);
 
   if (changeTestTitleFormEl.classList.contains('hidden')) {
     testTitleEl.classList.add('hidden');
@@ -11,7 +11,7 @@ function editTest(control) {
   } else {
     testTitleEl.classList.remove('hidden');
     changeTestTitleFormEl.classList.add('hidden');
-    control.textContent = I18n.admin.tests.index.update;
+    control.textContent = I18n.admin.tests.index['update-inline'];
   }
 };
 
@@ -22,7 +22,7 @@ function editTestHandler(event) {
 }
 
 document.addEventListener('turbolinks:load', () => {
-  const controls = document.querySelectorAll('.edit-test-form-link');
+  const controls = document.querySelectorAll('.tests-item__action_update-inline');
 
   if (!controls.length) return;
 

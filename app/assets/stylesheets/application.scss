@@ -1,20 +1,19 @@
-@import "bootstrap/scss/bootstrap";
-
-@import "octicon";
-
 @import "page";
 
 @import "main";
+@import "header";
 @import "footer";
 
+@import "flash";
+@import "errors";
+
+@import "admin-nav";
+
+@import "form";
+@import "table";
+
+@import "devise";
+
 @import "tests";
-@import "questions";
-@import "answers";
 
 @import "test_passages";
-
-@import "resource-errors";
-
-@import "new_user";
-
-@import "feedbacks";

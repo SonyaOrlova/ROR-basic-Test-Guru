@@ -1,0 +1,19 @@
+.flash {
+  margin-bottom: 30px;
+
+  &_alert {
+    padding-bottom: 30px;
+
+    color: #994433;
+
+    border-bottom: 5px double #999;
+  }
+
+  &_notice {
+    padding-bottom: 30px;
+
+    color: #346020;
+    
+    border-bottom: 5px double #999;
+  }
+}

@@ -1,35 +1,25 @@
-footer {
+.footer {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  align-items: flex-start;
+  justify-content: center;
 
-  padding: 2.5%;
-  box-sizing: border-box;
+  padding: 2.5vh 2.5vw;
+  
+  border-top: 1px solid #999;
 
-  border-top: 2px solid black;
+  &__feedback {
+    font-weight: 700;
 
-  background-color: gainsboro;
-
-  p {
-    margin-left: 15px;
-
-    &:last-child {
-      width: 100%;
-
-      margin-top: 10px;
-
-      font-size: 12px;
-      text-align: right;
-    }
-
-    a {
-      color: darkblue;
-    }
+    color: #557a95;
   }
 
-  .feedback-link {
-    margin-right: auto;
-    color: darkgreen;
-    font-weight: 800;
+  &__about {
+    text-align: right;
+
+    margin-left: auto;
+  }
+
+  &__link {
+    color: #557a95;
   }
 }

@@ -1,0 +1,132 @@
+ru:
+  logo: Test Guru.
+  main-page: Главная страница
+  admin-panel: Панель администратора
+  back: Назад
+  sign-up: Регистрация
+  login: Войти
+  logout: Выйти
+  project-info: Проект в онлайн-школе
+  feedback: Обратная связь
+  helpers:
+    submit: Сохранить
+  activerecord:
+    attributes:
+      test:
+        title: Название
+        level: Уровень
+        category: Категория
+        category_id: Категория
+      question:
+        body: Вопрос
+      answer:
+        body: Ответ
+        is_correct: Правильный ответ
+      feedback:
+        body: Обратная связь
+  shared:
+    errors:
+      info:
+        one: Обнаружена %{count} ошибка
+        few: Обнаружено %{count} ошибки
+        many: Обнаружено %{count} ошибок
+        other: Обнаружено %{count} ошибки
+  tests:
+    index:
+      header: Тесты
+      title: Название
+      level: Уровень
+      questions-count: Количество вопросов
+      start: Начать
+  test_passages:
+    show:
+      title: Прохождение теста
+      info: Вопрос
+      submit: Выбрать
+      github_gist: Создать github gist
+    update:
+      no_answer_given: Выберите ответ
+    result:
+      success: Тест пройден
+      fail: Тест провален
+    gist:
+      success: Gist успешно создан - %{gist_link}
+      fail: Ошибка сохранения gist
+  feedbacks:
+    new:
+      submit: Отправить
+    create:
+      success: Обратная связь была успешно отправлена
+  admin:
+    nav:
+      gists_list: Список gists
+      tests_list: Список тестов
+    tests:
+      index:
+        header: Тесты
+        title: Название
+        level: Уровень
+        questions-count: Количество вопросов
+        start: Начать
+        new: Создать тест
+        edit: Редактировать
+        delete: Удалить
+        update-inline: Изменить
+        cancel: Отмена
+      new:
+        header: Новый тест
+      edit:
+        header: Редактирование теста
+        question-edit: Редактировать вопрос
+        question-destroy: Удалить вопрос
+        question-new: Добавить вопрос
+        answers: Ответы
+        answer-new: Добавить ответ
+        answers-empty: Ответы не добавлены
+        answer-edit: Редактировать ответ
+        answer-destroy: Удалить ответ
+      create:
+        done: Тест «%{title}» был успешно создан
+      update_inline:
+        done: Тест «%{title}» был успешно изменен
+      destroy:
+        done: Тест «%{title}» был успешно удален
+      form:
+        submit: Сохранить
+    questions:
+      new:
+        header: Создание нового вопроса
+        info: Для теста
+      edit:
+        header: Редактирование вопроса
+        info: Для теста
+      create:
+        done: Вопрос «%{question}» теста «%{test}» был успешно добавлен
+      update:
+        done: Вопрос «%{question}» теста «%{test}» был успешно изменен
+      destroy:
+        done: Вопрос «%{question}» теста «%{test}» был успешно удален
+      form:
+        submit: Сохранить
+    answers:
+      new:
+        header: Создание ответа
+        info_test: Для теста
+        info_question: Для вопроса
+      edit:
+        header: Редактирование ответа
+        info_test: Для теста
+        info_question: Для вопроса
+      create:
+        done: Ответ «%{answer}» для вопроса «%{question}» был успешно добавлен
+      update:
+        done: Ответ «%{answer}» для вопроса «%{question}» был успешно изменен
+      destroy:
+        done: Ответ «%{answer}» для вопроса «%{question}» был успешно удален
+      form:
+        submit: Сохранить
+    gists:
+      index:
+        header: Созданные gists
+        question: Вопрос
+        author: Автор

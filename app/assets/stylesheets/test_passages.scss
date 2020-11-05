@@ -1,61 +1,105 @@
-// Place all the styles related to the test_passages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 .test-passage {
-  h1 {
-    margin-bottom: 50px;
+  width: 50%;
+
+  &__title {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+
+    margin-bottom: 30px;
   }
 
-  h2 {
+  &__info {
+    margin-bottom: 15px;
+  }
+
+  &__progress-bar {
+    height: 30px;
+    width: 100%;
+
+    border: 1px solid #000;
+
+    margin-bottom: 30px;
+  }
+
+  &__progress {
+    height: 100%;
+
+    background-color: #346020;
+  }
+
+  &__question {
+    padding-top: 30px;
     margin-bottom: 30px;
 
-    color: brown;
+    border-top: 1px dashed #696969;
   }
 
-  input[type="submit"] {
-    padding: 10px;
+  &__answer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &:last-of-type {
+      margin-bottom: 5px;
+    }
+
+    input {
+      border: 1px solid #696969;
+      border-radius: 5px;
+
+      width: 20px;
+      height: 20px;
+    }
+
+    label {
+      margin-left: 10px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__action {
+    font-size: 18px;
+    line-height: 24px;
+
+    padding: 15px 10px;
     margin-top: 15px;
 
-    color: white;
+    align-self: flex-end;
 
-    border: 1px solid black;
-    border-radius: 10px;
+    background-color: #d3d3d3;
 
-    background-color: darkgreen;
-  }
-  
-  .test-passage__test-title {
-    color: darkgreen;
+    border: 1px solid #696969;
+    border-radius: 5px;
   }
 
-  .test-passage__test-info {
-    margin-bottom: 30px;
-  }
+  &__github-gist {
+    color: #557a95;
 
-  .test-passage__progress-box {
-    height: 30px;
-    width: 100px;
-    border: 1px solid black;
-    margin-bottom: 30px;
-  }
+    display: inline-block;
 
-  .test-passage__progress {
-    height: 100%;
-    background-color: darkgreen;
+    margin-top: 30px;
   }
 }
 
 .test-passage-result {
-  h1 {
+  &__title {
     margin-bottom: 30px;
   }
 
-  .test-passage-result__success {
-    color: darkgreen;
+  &_success {
+    .test-passage-result__title {
+      color: #346020;
+    }
   }
 
-  .test-passage-result__fail {
-    color: darkred;
+  &_fail {
+    .test-passage-result__title {
+      color: #994433;
+    }
   }
 }

@@ -14,24 +14,17 @@
 
   <body>
     <header>
-      <%= render 'layouts/profile' %>
+      <%= render 'layouts/header' %>
     </header>
 
     <main>
-      <div class="alert alert-primary" role="alert">
-        <%= flash_messages %>
-      </div>
+      <%= render 'layouts/flash' %>
 
       <%= yield %>
     </main>
 
     <footer>
-      <% if user_signed_in? %>
-        <%= link_to t('feedback'), new_feedback_path, class: "feedback-link" %>
-      <% end %>
-      <p> © <%= current_year %> </p>
-      <p> <%= github_url('Тест Гуру', 'SonyaOrlova', 'ROR-basic-Test-Guru') %> </p>
-      <p> Учебный проект в онлайн-школе <%= link_to 'Thinknetica', 'https://thinknetica.com/', target: '_blank' %> </p>
+      <%= render 'layouts/footer' %>
     </footer>
   </body>
 

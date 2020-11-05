@@ -2,14 +2,8 @@ main {
   padding: 2.5%;
   box-sizing: border-box;
 
-  nav {
-    margin-bottom: 30px;
-
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  a {
-    color: darkblue;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

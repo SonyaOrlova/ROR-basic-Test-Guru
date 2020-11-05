@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_many :gists
 
   validates_presence_of :first_name, :last_name
+  validates_confirmation_of :password
 
   def tests_by_level(level)
     tests.where(level: level)

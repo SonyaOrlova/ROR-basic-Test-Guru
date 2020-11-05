@@ -1,5 +1,6 @@
 class Admin::QuestionsController < Admin::BaseController
-  before_action :question, :test
+  before_action :test, only: [:new, :create]
+  before_action :question, only: [:edit, :update, :destroy]
 
   def new
     @question = @test.questions.new
@@ -9,7 +10,7 @@ class Admin::QuestionsController < Admin::BaseController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to admin_test_path(@test), notice: "Вопрос «#{@question.body}» был успешно создан"
+      redirect_to edit_admin_test_path(@test), notice: t('.done', test: @question.test.title, question: @question.body)
     else
       render :new
     end
@@ -19,7 +20,7 @@ class Admin::QuestionsController < Admin::BaseController
 
   def update
     if @question.update(question_params)
-      redirect_to admin_test_path(@question.test), notice: "Вопрос «#{@question.body}» был успешно изменен"
+      redirect_to edit_admin_test_path(@question.test), notice: t('.done', test: @question.test.title, question: @question.body)
     else
       render :edit
     end
@@ -28,7 +29,7 @@ class Admin::QuestionsController < Admin::BaseController
   def destroy
     @question.destroy
     
-    redirect_to admin_test_path(@question.test), notice: "Вопрос «#{@question.body}» был успешно удален"
+    redirect_to edit_admin_test_path(@question.test), notice: t('.done', test: @question.test.title, question: @question.body)
   end
 
   private
