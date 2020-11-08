@@ -2,3 +2,5 @@ en:
   tests_mailer:
     completed_test:
       subject: "You`ve just completed the test!"
+    send_feedback:
+      subject: "New feedback!"

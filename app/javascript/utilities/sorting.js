@@ -1,30 +1,31 @@
 const sortRows = () => {
-  const ascSort = (rowA, rowB) => (rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? 1 : -1);
-  const descSort = (rowA, rowB) => (rowA.cells[0].innerHTML < rowB.cells[0].innerHTML ? 1 : -1);
+  const ascSort = (rowA, rowB) => (rowA.cells[0].innerText > rowB.cells[0].innerText ? 1 : -1);
+  const descSort = (rowA, rowB) => (rowA.cells[0].innerText < rowB.cells[0].innerText ? 1 : -1);
 
-  const table = document.querySelector('.table');
+  const controlEl = document.querySelector('.tests__title-th');
+  const table = document.querySelector('.tests__table');
 
   const rows = table.tBodies[0].children;
 
   let sortedRows;
 
-  if (table.classList.contains('asc')) {
+  if (controlEl.classList.contains('tests__title-th_asc')) {
     sortedRows = Array.from(rows).sort(descSort);
     
-    table.classList.remove('asc');
-    table.classList.add('desc');
+    controlEl.classList.remove('tests__title-th_asc');
+    controlEl.classList.add('tests__title-th_desc');
   } else {
     sortedRows = Array.from(rows).sort(ascSort);
 
-    table.classList.remove('desc');
-    table.classList.add('asc');
+    controlEl.classList.remove('tests__title-th_desc');
+    controlEl.classList.add('tests__title-th_asc');
   }
 
   table.tBodies[0].append(...sortedRows);
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-  const controlEl = document.querySelector('.sort-control');
+document.addEventListener('turbolinks:load', () => {
+  const controlEl = document.querySelector('.tests__title-th');
 
   if (!controlEl) return;
 

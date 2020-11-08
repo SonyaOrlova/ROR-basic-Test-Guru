@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'feedback/new'
+  get 'feedback/create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'tests#index'
@@ -18,9 +20,11 @@ Rails.application.routes.draw do
     post :gist, on: :member
   end
 
+  resources :feedbacks, only: [:new, :create]
+
   namespace :admin do
-    resources :tests do 
-      patch :edit_inline, on: :member
+    resources :tests, except: [:show, :update] do
+      patch :update_inline, on: :member
 
       resources :questions, except: [:index, :show], shallow: true do
         resources :answers, except: [:index, :show], shallow: true

@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: %{"Тест Гуру" <mail@test_guru.com>}
+  default from: Rails.configuration.x.admin.email
   layout 'mailer'
 end

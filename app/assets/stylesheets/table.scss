@@ -1,0 +1,31 @@
+.table {
+  &__title {
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 700;
+
+    text-align: center;
+
+    margin-bottom: 30px;
+  }
+
+  &__content {
+    border-collapse: collapse;
+
+    text-align: left;
+
+    thead, tr {
+      border-bottom: 1px solid #999;
+    }
+
+    th, td {
+      padding: 10px 15px;
+    }
+
+    tbody {
+      tr {
+        height: 80px;
+      }
+    }
+  }
+}

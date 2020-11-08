@@ -1,17 +1,13 @@
-<div class='answer-form'>
-  <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
-    <%= render 'shared/resource_errors', resource: @answer %>
+<%= form_with model: [:admin, @question, @answer], local: true do |form| %>
+  <p class="form__field">
+    <%= form.label :body  %>
+    <%= form.text_area :body, id: :answer_body  %>
+  </p>
 
-    <p>
-      <%= form.label :body, 'Формулировка ответа'  %>
-      <%= form.text_area :body, id: :answer_body  %>
-    </p>
+  <p class="form__field form__field_checkbox">
+    <%= form.label :is_correct  %>
+    <%= form.check_box  :is_correct, id: :answer_is_correct  %>
+  </p>
 
-    <p class='answer-form__checkbox'>
-      <%= form.label :is_correct, 'Правильный ответ'  %>
-      <%= form.check_box  :is_correct, id: :answer_is_correct  %>
-    </p>
-
-    <p> <%= form.submit submit_title %> </p>
-  <% end %>
-</div>
+  <p class="form__action"> <%= form.submit t('.submit') %> </p>
+<% end %>

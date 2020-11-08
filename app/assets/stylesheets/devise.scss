@@ -1,0 +1,14 @@
+.devise-links {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 30px;
+
+  &__link {
+    color: #557a95;
+
+    &:last-child {
+      margin-top: 5px;
+    }
+  }
+}

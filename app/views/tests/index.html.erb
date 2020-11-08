@@ -1,26 +1,31 @@
-<div class='tests container'>
-    <h2 align='center' style='margin-bottom: 25px'> <%= t('.header') %> </h2>
-    <table class='table table-sm borderless' >
-      <thead class='text-light bg-dark'>
+<div class="tests table">
+  <h2 class="table__title"> <%= t('.header') %> </h2>
+
+  <table class="tests__table table__content" >
+    <thead>
       <tr>
-        <th scope='col' class="sort-control pointer">
-          Название
-          <%= octicon 'arrow-up', class: 'text-primary arrow arrow-up' %>
-          <%= octicon 'arrow-down', class: 'text-primary arrow arrow-down' %>
+        <th class="tests__title-th tests__title-th_asc">
+          <%= t('.title') %>
+          <%= octicon 'arrow-up', class: 'arrow-up' %>
+          <%= octicon 'arrow-down', class: 'arrow-down' %>
         </th>
-        <th scope='col'> Уровень </th>
-        <th scope='col'> Кол-во вопросов </th>
+        <th> <%= t('.level') %> </th>
+        <th> <%= t('.questions-count') %> </th>
       </tr>
-      </thead>
-      <tbody class='content'>
-        <% @tests.each do |test| %>
-          <tr>
+    </thead>
+
+    <tbody>
+      <% @tests.each do |test| %>
+        <% if isFilled?(test) %>
+          <tr class="tests-item">
             <td> <%= test.title %> </td>
             <td> <%= test.level %> </td>
             <td> <%= test.questions.count %> </td>
-            <td> <%= link_to t('.start'), start_test_path(test), method: :post %> </td>
+
+            <td> <%= link_to t('.start'), start_test_path(test), method: :post, class: 'tests-item__action tests-item__action_start' %> </td>
           </tr>
         <% end %>
-      </tbody>
-    </table>
+      <% end %>
+    </tbody>
+  </table>
 </div>

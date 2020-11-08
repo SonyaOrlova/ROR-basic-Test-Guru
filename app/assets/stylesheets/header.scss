@@ -1,0 +1,63 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 2.5vh 2.5vw;
+
+  border-bottom: 1px solid #999;
+
+  &__logo {
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: 700;
+
+    color: #336b87;
+
+    margin-right: 10px;
+  }
+
+  &__greeting {
+    font-style: italic;
+
+    color: #999;
+
+    align-self: flex-end;
+  }
+
+  &__navigation {
+    display: flex;
+
+    margin-left: auto;
+  }
+
+  &__bar {
+    display: flex;
+    
+    margin-left: 30px;
+  }
+
+  &__bar-link {
+    margin-left: 15px;
+  }
+
+  &__admin-panel {
+    color: #999;
+
+    padding-left: 20px;
+    margin-left: 15px;
+
+    &_active {
+      position: relative;
+
+      color: #346020;
+
+      &::before {
+        position: absolute;
+        left: 0;
+
+        content: '✓';
+      }
+    }
+  }
+}

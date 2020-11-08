@@ -13,9 +13,12 @@ class User < ApplicationRecord
   has_many :test_passages
   has_many :passed_tests, through: :test_passages, source: :test
 
+  has_many :feedbacks
+
   has_many :gists
 
   validates_presence_of :first_name, :last_name
+  validates_confirmation_of :password
 
   def tests_by_level(level)
     tests.where(level: level)

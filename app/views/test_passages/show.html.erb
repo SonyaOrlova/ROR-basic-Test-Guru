@@ -1,26 +1,31 @@
-<nav> <%= link_to 'На главную страницу', main_page_path %> </nav>
-
-<div class='test-passage'>
-  <h1> Прохождение теста <span class='test-passage__test-title'> <%= @test_passage.test.title %> </span> </h1>
+<div class="test-passage">
+  <h1 class="test-passage__title">
+    <%= t('.title') %>
+    <span class="test-passage__title-text">
+      <%= @test_passage.test.title %>
+    </span>
+  </h1>
   
-  <p class="test-passage__test-info">
-    Вопрос <%= @test_passage.current_question_serial_number %> / <%= @test_passage.test.questions.count %>
+  <p class="test-passage__info">
+    <%= t('.info') %>
+    <%= @test_passage.current_question_serial_number %> / <%= @test_passage.test.questions.count %>
   </p>
 
-  <div class="test-passage__progress-box">
+  <div class="test-passage__progress-bar">
     <%= content_tag :p, '', class: 'test-passage__progress', data: { test_progress: @test_passage.test_progress } %>
   </div>
 
-  <h2> <%= @test_passage.current_question.body %> </h2>
-  <%= form_with url: test_passage_path(@test_passage), method: :put, local: true do |form| %>
-    <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body do |cb|%>
-      <p>
+  <h2 class="test-passage__question"> <%= @test_passage.current_question.body %> </h2>
+  <%= form_with url: test_passage_path(@test_passage), method: :put, local: true, class: 'test-passage__form' do |form| %>
+    <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |cb|%>
+      <p class="test-passage__answer">
         <%= cb.check_box %>
         <%= cb.label %>
       </p>
     <% end %>
 
-    <p> <%= link_to 'Сохранить вопрос в gist github', gist_test_passage_path(@test_passage), method: :post %> </p>
-    <p> <%= form.submit 'Выбрать' %> </p>
+    <%= form.submit t('.submit'), class: 'test-passage__action' %>
   <% end %>
+
+  <%= link_to t('.github_gist'), gist_test_passage_path(@test_passage), method: :post, class: 'test-passage__github-gist' %>
 </div>

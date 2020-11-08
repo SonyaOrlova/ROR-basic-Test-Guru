@@ -1,0 +1,36 @@
+<%= render 'shared/errors', resource: @test %>
+
+<div class="test-edit">
+  <h1 class="test-edit__title"> <%= t('.header') %> <%= @test.title %> </h1>
+
+  <% @test.questions.each do |question| %>
+    <div class="test-edit__question">
+      <h2 class="test-edit__question-body"> <%= question.body %> </h2>
+
+      <h3 class="test-edit__answers"> <%= t('.answers') %> : </h3>
+
+      <p class="test-edit__answers_new"> <%= link_to t('.answer-new'), new_admin_question_answer_path(question) %> </p>
+
+      <% if question.answers.empty? %>
+        <p class="test-edit__answers_empty"> <%= t('.answers-empty') %> </p>
+      <% else %>
+        <ul class="test-edit__answers">
+          <% question.answers.each do |answer| %>
+            <li class="test-edit__answer-body"> <%= answer.body %> <%= '(✓)' if answer.is_correct %> </li>
+            <p class="test-edit__answer-actions">
+              <%= link_to t('.answer-edit'), edit_admin_answer_path(answer) %> |
+              <%= link_to t('.answer-destroy'), admin_answer_path(answer), method: :delete %>
+            </p>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <p class="test-edit__question-actions">
+        <%= link_to t('.question-edit'), edit_admin_question_path(question) %> |
+        <%= link_to t('.question-destroy'), admin_question_path(question), method: :delete %>
+      </p>
+    </div>
+  <% end %>
+
+  <p class="test-edit__question_new"> <%= link_to t('.question-new'), new_admin_test_question_path(@test) %> </p>
+</div>

@@ -8,14 +8,9 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-import $ from 'jquery'
-
-import 'bootstrap'
-import 'popper.js'
-
 import 'utilities/sorting'
+import 'utilities/update-inline-form'
 import 'utilities/password-confirmation'
-import 'utilities/change-test-title'
 import 'utilities/test_progress'
 
 // Uncomment to copy all static images under ../images to the output folder and reference

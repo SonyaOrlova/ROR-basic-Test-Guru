@@ -1,0 +1,9 @@
+<nav class="admin-nav">
+  <% unless current_page?(admin_gists_path) %>
+    <p> <%= link_to t('.gists_list'), admin_gists_path %> </p>
+  <% end %>
+
+  <% unless current_page?(admin_tests_path) %>
+    <p> <%= link_to t('.tests_list'), admin_tests_path %> </p>
+  <% end %>
+</nav> 

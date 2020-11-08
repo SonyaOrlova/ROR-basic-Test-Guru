@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>RORBasicTestGuru</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <%= render 'layouts/header' %>
+    </header>
+
+    <main>
+      <%= render 'admin/nav' %>
+      <%= render 'layouts/flash' %>
+
+      <%= yield %>
+    </main>
+
+    <footer>
+      <%= render 'layouts/footer' %>
+    </footer>
+  </body>
+
+  <script type="text/javascript">
+    window.I18n = <%= global_locale.to_json.html_safe %>
+  </script>
+</html>

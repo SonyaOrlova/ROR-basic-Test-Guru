@@ -3,8 +3,8 @@ module ApplicationHelper
     Time.now.year
   end
 
-  def github_url(title, author, repo)
-    link_to title, "https://github.com/#{author}/#{repo}", target: '_blank'
+  def github_url(author, repo)
+    "https://github.com/#{author}/#{repo}"
   end
 
   def flash_messages
@@ -13,5 +13,10 @@ module ApplicationHelper
 
   def main_page_path
     current_user.admin? ? admin_tests_path : root_path
+  end
+  
+  def global_locale
+    @translations ||= I18n.backend.send(:translations)
+    @translations[I18n.locale].with_indifferent_access
   end
 end

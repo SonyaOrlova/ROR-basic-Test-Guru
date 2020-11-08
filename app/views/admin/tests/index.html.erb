@@ -1,24 +1,42 @@
-<div class='tests container'>
-    <h2 align='center' style='margin-bottom: 25px'> <%= t('.header') %> </h2>
+<%= render 'shared/errors', resource: @test %>
 
-    <%= render 'shared/resource_errors', resource: @test %>
+<div class="tests table">
+  <h2 class="table__title"> <%= t('.header') %> </h2>
 
-    <table class='table table-sm borderless' >
-      <tbody class='content'>
-        <% @tests.each do |test| %>
-          <tr>
-            <td class='align-middle text-center'>
-              <%= content_tag :span, test.title, class: 'test-title', data: { test_id: test.id } %>
-              <%= render 'edit_test_form', test: test %>
-            </td>
-            <td class='align-middle text-center'> 
-              <%= link_to t('.start'), start_test_path(test), method: :post %> |
-              <%= link_to 'Change title', '#', class: 'edit-test-form-link', data: { test_id: test.id } %> |
-              <%= link_to t('.edit'), admin_test_path(test) %> |
-              <%= link_to t('.delete'), admin_test_path(test), method: :delete %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+  <table class="tests__table table__content">
+    <thead>
+      <tr>
+        <th class="tests__title-th tests__title-th_asc">
+          <%= t('.title') %>
+          <%= octicon 'arrow-up', class: 'arrow-up' %>
+          <%= octicon 'arrow-down', class: 'arrow-down' %>
+        </th>
+        <th> <%= t('.level') %> </th>
+        <th> <%= t('.questions-count') %> </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @tests.each do |test| %>
+      <tr class="tests-item">
+        <td class="tests-item__title-td">
+          <%= content_tag :span, test.title, class: 'tests-item__title', data: { test_id: test.id } %>
+          <%= render 'update_inline_form', test: test %>
+        </td>
+        <td> <%= test.level %> </td>
+        <td> <%= test.questions.count %> </td>
+        <td> <%= link_to t('.update-inline'),'#', class: 'tests-item__action tests-item__action_update-inline', data: { test_id: test.id } %> </td>
+        <td> <%= link_to t('.edit'), edit_admin_test_path(test), class: 'tests-item__action' %> </td>
+        <td> <%= link_to t('.delete'), admin_test_path(test), method: :delete, class: 'tests-item__action' %> </td>
+        <td>
+          <% if isFilled?(test) %>
+            <%= link_to t('.start'), start_test_path(test), method: :post, class: 'tests-item__action tests-item__action_start' %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to t('.new'), new_admin_test_path, class: 'tests__action' %>
 </div>

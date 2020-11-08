@@ -1,0 +1,14 @@
+<% if resource.present? && resource.errors.any? %>
+  <div class="errors">
+    <h3 class="errors__title">
+      <%= t('.info', count: resource.errors.count).capitalize %>
+    </h3>
+    <ul class="errors__list">
+      <% resource.errors.full_messages.each do |message| %>
+        <li class="errors__item">
+          <%= message %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

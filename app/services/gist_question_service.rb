@@ -14,7 +14,8 @@ class GistQuestionService
       response = @client.create_gist(gist_params)
       
       result.set_response(response)
-    rescue
+    rescue Exception => e
+      puts e.message
     end
 
     result
@@ -23,7 +24,7 @@ class GistQuestionService
   private
 
   def default_client
-    Octokit::Client.new(access_token: Octokit::Client.new(access_token: ENV['ACCESS_TOKEN']))
+    Octokit::Client.new(access_token: ENV['ACCESS_TOKEN'])
   end
 
   def gist_params
