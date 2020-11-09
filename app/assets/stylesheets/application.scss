@@ -4,10 +4,10 @@
 @import "header";
 @import "footer";
 
+@import "nav";
+
 @import "flash";
 @import "errors";
-
-@import "admin-nav";
 
 @import "form";
 @import "table";
@@ -17,3 +17,5 @@
 @import "tests";
 
 @import "test_passages";
+
+@import "badges";

@@ -9,7 +9,11 @@ ru:
   project-info: Проект в онлайн-школе
   feedback: Обратная связь
   helpers:
-    submit: Сохранить
+    select:
+      prompt: Выберите
+    submit:
+      create: Создать
+      update: Сохранить
   activerecord:
     attributes:
       test:
@@ -24,6 +28,11 @@ ru:
         is_correct: Правильный ответ
       feedback:
         body: Обратная связь
+      badge:
+        title: Название
+        icon_url: Адрес иконки
+        rule_type: Тип правила
+        rule_value: Значение правила
   shared:
     errors:
       info:
@@ -31,10 +40,20 @@ ru:
         few: Обнаружено %{count} ошибки
         many: Обнаружено %{count} ошибок
         other: Обнаружено %{count} ошибки
+    badges:
+      badges_list:
+        title: Название
+        icon: Иконка
+        rule_type: Тип правила
+        rule_value: Значение правила
+  layouts:
+    nav:
+      badges_list: Мои награды
   tests:
     index:
       header: Тесты
       title: Название
+      category: Категория
       level: Уровень
       questions-count: Количество вопросов
       start: Начать
@@ -49,6 +68,7 @@ ru:
     result:
       success: Тест пройден
       fail: Тест провален
+      badges: Ваши новые награды
     gist:
       success: Gist успешно создан - %{gist_link}
       fail: Ошибка сохранения gist
@@ -57,14 +77,19 @@ ru:
       submit: Отправить
     create:
       success: Обратная связь была успешно отправлена
+  badges:
+    index:
+      header: Награды
   admin:
     nav:
       gists_list: Список gists
+      badges_list: Список наград
       tests_list: Список тестов
     tests:
       index:
         header: Тесты
         title: Название
+        category: Категория
         level: Уровень
         questions-count: Количество вопросов
         start: Начать
@@ -130,3 +155,26 @@ ru:
         header: Созданные gists
         question: Вопрос
         author: Автор
+    badges:
+      index:
+        header: Награды
+        title: Название
+        icon: Иконка
+        rule_type: Тип правила
+        rule_value: Значение правила
+        edit: Редактировать
+        delete: Удалить
+        new: Создать награду
+      new:
+        header: Создание награды
+      edit:
+        header: Редактирование награды
+      create:
+        done: Награда «%{badge}» была успешно создана
+      update:
+        done: Награда «%{badge}» была успешно изменена
+      destroy:
+        done: Награда «%{badge}» была успешно удалена
+      form:
+        select: Выберите
+

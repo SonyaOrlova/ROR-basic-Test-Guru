@@ -17,6 +17,8 @@ class User < ApplicationRecord
 
   has_many :gists
 
+  has_and_belongs_to_many :badges
+
   validates_presence_of :first_name, :last_name
   validates_confirmation_of :password
 

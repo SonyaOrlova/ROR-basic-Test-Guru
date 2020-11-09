@@ -8,6 +8,10 @@ en:
   logout: Logout
   project-info: Project at school
   feedback: Feedback
+  helpers:
+    submit:
+      create: Create
+      update: Save
   activerecord:
     attributes:
       test:
@@ -22,15 +26,30 @@ en:
         is_correct: Is correct
       feedback:
         body: Feedback
+      badge:
+        title: Title
+        icon_url: Icon url
+        rule_type: Rule type
+        rule_value: Rule value
   shared:
     errors:
       info:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    badges:
+      badges_list:
+        title: Title
+        icon: Icon
+        rule_type: Rule type
+        rule_value: Rule value
+  layouts:
+    nav:
+      badges_list: My badges
   tests:
     index:
       header: Tests
       title: Title
+      category: Category
       level: Level
       questions-count: Questions count
       start: Start
@@ -45,6 +64,7 @@ en:
     result:
       success: Test success
       fail: Test fail
+      badges: Your new badges
     gist:
       success: Gist was successfully created - %{gist_link}
       fail: Error occured while creating gist
@@ -53,14 +73,19 @@ en:
       submit: Send
     create:
       success: Feedback was successfully sent
+  badges:
+    index:
+      header: Badges
   admin:
     nav:
       gists_list: Gists list
+      badges_list: Badges list
       tests_list: Tests list
     tests:
       index:
         header: Tests
         title: Title
+        category: Category
         level: Level
         questions-count: Questions count
         start: Start
@@ -120,14 +145,32 @@ en:
       destroy:
         done: Answer «%{answer}» for question «%{question}» was successfully destroyed
       form:
-        submit: Save     
+        submit: Save
     gists:
       index:
         header: Created gists
         question: Question
         author: Author
-  # services:
-  #   gist_question_service:
-  #     gist_params:
-  #       description: A question about %{test_title} from Test Guru
+    badges:
+      index:
+        header: Badges
+        title: Title
+        icon: Icon
+        rule_type: Rule type
+        rule_value: Rule value
+        edit: Edit
+        delete: Delete
+        new: Create badge
+      new:
+        header: New badge
+      edit:
+        header: Edit badge
+      create:
+        done: Badge «%{badge}» was successfully created
+      update:
+        done: Badge «%{badge}» was successfully updated
+      destroy:
+        done: Badge «%{badge}» was successfully destroyed
+      form:
+        select: Select
 

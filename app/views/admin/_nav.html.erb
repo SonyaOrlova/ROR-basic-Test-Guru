@@ -1,9 +1,13 @@
-<nav class="admin-nav">
-  <% unless current_page?(admin_gists_path) %>
-    <p> <%= link_to t('.gists_list'), admin_gists_path %> </p>
+<nav class="nav">
+  <% unless current_page?(admin_tests_path) %>
+    <%= link_to t('.tests_list'), admin_tests_path %>
   <% end %>
 
-  <% unless current_page?(admin_tests_path) %>
-    <p> <%= link_to t('.tests_list'), admin_tests_path %> </p>
+  <% unless current_page?(admin_gists_path) %>
+    <%= link_to t('.gists_list'), admin_gists_path %>
+  <% end %>
+
+  <% unless current_page?(admin_badges_path) %>
+    <%= link_to t('.badges_list'), admin_badges_path %>
   <% end %>
 </nav> 

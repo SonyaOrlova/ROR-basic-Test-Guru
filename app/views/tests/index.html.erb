@@ -9,6 +9,7 @@
           <%= octicon 'arrow-up', class: 'arrow-up' %>
           <%= octicon 'arrow-down', class: 'arrow-down' %>
         </th>
+        <th> <%= t('.category') %> </th>
         <th> <%= t('.level') %> </th>
         <th> <%= t('.questions-count') %> </th>
       </tr>
@@ -19,10 +20,11 @@
         <% if isFilled?(test) %>
           <tr class="tests-item">
             <td> <%= test.title %> </td>
+            <td> <%= test.category.title %> </td>
             <td> <%= test.level %> </td>
             <td> <%= test.questions.count %> </td>
 
-            <td> <%= link_to t('.start'), start_test_path(test), method: :post, class: 'tests-item__action tests-item__action_start' %> </td>
+            <td> <%= link_to t('.start'), start_test_path(test), method: :post, class: 'table__subaction tests-item__start' %> </td>
           </tr>
         <% end %>
       <% end %>

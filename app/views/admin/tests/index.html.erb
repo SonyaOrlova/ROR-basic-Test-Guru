@@ -11,6 +11,7 @@
           <%= octicon 'arrow-up', class: 'arrow-up' %>
           <%= octicon 'arrow-down', class: 'arrow-down' %>
         </th>
+        <th> <%= t('.category') %> </th>
         <th> <%= t('.level') %> </th>
         <th> <%= t('.questions-count') %> </th>
       </tr>
@@ -23,14 +24,15 @@
           <%= content_tag :span, test.title, class: 'tests-item__title', data: { test_id: test.id } %>
           <%= render 'update_inline_form', test: test %>
         </td>
+        <td> <%= test.category.title %> </td>
         <td> <%= test.level %> </td>
         <td> <%= test.questions.count %> </td>
-        <td> <%= link_to t('.update-inline'),'#', class: 'tests-item__action tests-item__action_update-inline', data: { test_id: test.id } %> </td>
-        <td> <%= link_to t('.edit'), edit_admin_test_path(test), class: 'tests-item__action' %> </td>
-        <td> <%= link_to t('.delete'), admin_test_path(test), method: :delete, class: 'tests-item__action' %> </td>
+        <td> <%= link_to t('.update-inline'),'#', class: 'table__subaction tests-item__action_update-inline', data: { test_id: test.id } %> </td>
+        <td> <%= link_to t('.edit'), edit_admin_test_path(test), class: 'table__subaction' %> </td>
+        <td> <%= link_to t('.delete'), admin_test_path(test), method: :delete, class: 'table__subaction' %> </td>
         <td>
           <% if isFilled?(test) %>
-            <%= link_to t('.start'), start_test_path(test), method: :post, class: 'tests-item__action tests-item__action_start' %>
+            <%= link_to t('.start'), start_test_path(test), method: :post, class: 'table__subaction tests-item__start' %>
           <% end %>
         </td>
       </tr>
@@ -38,5 +40,5 @@
     </tbody>
   </table>
 
-  <%= link_to t('.new'), new_admin_test_path, class: 'tests__action' %>
+  <%= link_to t('.new'), new_admin_test_path, class: 'table__action' %>
 </div>

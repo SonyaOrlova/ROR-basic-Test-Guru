@@ -3,8 +3,16 @@
 <div class="test-passage-result test-passage-result_<%= @test_passage.success? ? 'success' : 'fail'%>">
   <h1 class="test-passage-result__title"> <%= result_text %> </h1>
 
-  <h2>
+  <h2 class="test-passage-result__rate">
     Процент успеха:
     <%= @test_passage.test_result_rate %>
   </h2>
+
+  <% if @badges.present? %>
+    <div class="test-passage-result__badges">
+      <h3> <%= t('.badges') %>: </h3>
+
+      <%= render 'shared/badges/badges_list', badges: @badges %>
+    </div>
+  <% end %>
 </div>
