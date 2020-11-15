@@ -8,6 +8,7 @@ ru:
   logout: Выйти
   project-info: Проект в онлайн-школе
   feedback: Обратная связь
+  empty: Отсутствует
   helpers:
     select:
       prompt: Выберите
@@ -21,6 +22,7 @@ ru:
         level: Уровень
         category: Категория
         category_id: Категория
+        timer: Таймер в секундах
       question:
         body: Вопрос
       answer:
@@ -56,6 +58,7 @@ ru:
       category: Категория
       level: Уровень
       questions-count: Количество вопросов
+      timer: Таймер в секундах
       start: Начать
   test_passages:
     show:
@@ -92,6 +95,7 @@ ru:
         category: Категория
         level: Уровень
         questions-count: Количество вопросов
+        timer: Таймер в секундах
         start: Начать
         new: Создать тест
         edit: Редактировать
@@ -112,6 +116,8 @@ ru:
         answer-destroy: Удалить ответ
       create:
         done: Тест «%{title}» был успешно создан
+      update:
+        done: Тест «%{title}» был успешно изменен
       update_inline:
         done: Тест «%{title}» был успешно изменен
       destroy:

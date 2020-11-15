@@ -3,6 +3,8 @@
 <div class="test-edit">
   <h1 class="test-edit__title"> <%= t('.header') %> <%= @test.title %> </h1>
 
+  <%= render 'form' %>
+
   <% @test.questions.each do |question| %>
     <div class="test-edit__question">
       <h2 class="test-edit__question-body"> <%= question.body %> </h2>

@@ -1,6 +1,6 @@
 class Admin::TestsController < Admin::BaseController
   before_action :tests, only: [:index, :update_inline]
-  before_action :test, only: [:edit, :destroy, :start, :update_inline]
+  before_action :test, only: [:edit, :update, :destroy, :start, :update_inline]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -21,6 +21,14 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def edit; end
+
+  def update
+    if @test.update(test_params)
+      redirect_to admin_tests_path, notice: t('.done', title: @test.title)
+    else
+      render :edit
+    end
+  end
 
   def destroy
     @test.destroy
@@ -53,7 +61,7 @@ class Admin::TestsController < Admin::BaseController
   end
 
   def test_params
-    params.require(:test).permit(:title, :level, :category_id)
+    params.require(:test).permit(:title, :level, :category_id, :timer)
   end
 
   def rescue_with_test_not_found

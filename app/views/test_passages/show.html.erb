@@ -15,6 +15,14 @@
     <%= content_tag :p, '', class: 'test-passage__progress', data: { test_progress: @test_passage.test_progress } %>
   </div>
 
+  <% if @test_passage.test.timer %>
+    <%= content_tag :p, '', class: 'test-passage__timer', data: { timer: @test_passage.timer } do %>
+      <span class="test-passage__timer-minutes"></span>
+      :
+      <span class="test-passage__timer-seconds"></span>
+    <% end %>
+  <% end %>
+
   <h2 class="test-passage__question"> <%= @test_passage.current_question.body %> </h2>
   <%= form_with url: test_passage_path(@test_passage), method: :put, local: true, class: 'test-passage__form' do |form| %>
     <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |cb|%>

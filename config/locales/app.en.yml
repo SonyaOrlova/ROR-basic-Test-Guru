@@ -8,6 +8,7 @@ en:
   logout: Logout
   project-info: Project at school
   feedback: Feedback
+  empty: Nonexistent
   helpers:
     submit:
       create: Create
@@ -19,6 +20,7 @@ en:
         level: Level
         category: Category
         category_id: Category
+        timer: Timer in seconds
       question:
         body: Question
       answer:
@@ -52,6 +54,7 @@ en:
       category: Category
       level: Level
       questions-count: Questions count
+      timer: Timer in seconds
       start: Start
   test_passages:
     show:
@@ -88,6 +91,7 @@ en:
         category: Category
         level: Level
         questions-count: Questions count
+        timer: Timer in seconds
         start: Start
         new: Create new test
         edit: Edit
@@ -108,6 +112,8 @@ en:
         answer-destroy: Destroy answer
       create:
         done: Test «%{title}» was successfully created
+      update:
+        done: Test «%{title}» was successfully updated
       update_inline:
         done: Test «%{title}» was successfully updated
       destroy:
