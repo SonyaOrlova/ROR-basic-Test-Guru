@@ -16,6 +16,16 @@ class TestPassage < ApplicationRecord
     save
   end
 
+  def timer
+    remaining_time = test.timer - (Time.current - created_at).to_i
+
+    remaining_time > 0 ? remaining_time : 0
+  end
+
+  def timer_expired?
+    test.timer && timer == 0
+  end
+  
   def completed?
     current_question.nil?
   end

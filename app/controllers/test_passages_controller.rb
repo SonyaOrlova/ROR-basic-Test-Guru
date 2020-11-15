@@ -2,7 +2,7 @@ class TestPassagesController < ApplicationController
   before_action :test_passage
 
   def show
-    redirect_to result_test_passage_path(@test_passage) if @test_passage.passed
+    redirect_to result_test_passage_path(@test_passage) if @test_passage.timer_expired? || @test_passage.passed
   end
 
   def update

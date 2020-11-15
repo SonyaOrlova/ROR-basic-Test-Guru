@@ -13,6 +13,7 @@ import 'utilities/update-inline-form'
 import 'utilities/password-confirmation'
 import 'utilities/test_progress'
 import 'utilities/badge_rule_type'
+import 'utilities/test-passage-timer'
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
