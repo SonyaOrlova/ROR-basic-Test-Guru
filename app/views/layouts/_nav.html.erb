@@ -1,0 +1,5 @@
+<nav class="nav">
+  <% unless current_page?(badges_path) %>
+    <%= link_to t('.badges_list'), badges_path %>
+  <% end %>
+</nav> 

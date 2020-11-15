@@ -1,19 +1,4 @@
 .tests {
-  &__action {
-    display: inline-block;
-
-    float: right;
-
-    padding: 15px;
-
-    margin-top: 30px;
-
-    background-color: #d3d3d3;
-
-    border: 1px solid #696969;
-    border-radius: 5px;
-  }
-
   &__title-th {
     cursor: pointer;
     
@@ -35,12 +20,8 @@
       width: 250px;
     }
 
-    &__action {
-      font-weight: 700;
-
-      &_start {
-        color: #336b87;
-      }
+    &__start {
+      color: #336b87;
     }
 
     &__update-inline-field {

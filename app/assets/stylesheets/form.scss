@@ -41,6 +41,10 @@
       resize: none;
     }
 
+    select option:disabled {
+      display: none;
+    }
+
     &_checkbox {
       display: flex;
       justify-content: flex-start;

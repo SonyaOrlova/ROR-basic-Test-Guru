@@ -1,0 +1,23 @@
+<div class="table">
+  <table class="table__content">
+    <thead>
+      <tr>
+        <th> <%= t('.title') %></th>
+        <th> <%= t('.icon') %> </th>
+        <th> <%= t('.rule_type') %> </th>
+        <th> <%= t('.rule_value') %> </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% badges.each do |badge| %>
+        <tr>
+          <td> <%= badge.title %> </td>
+          <td> <%= image_tag(badge.icon_url, size: "30x30") %> </td>
+          <td> <%= badge.rule_type %> </td>
+          <td> <%= badge.rule_value %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

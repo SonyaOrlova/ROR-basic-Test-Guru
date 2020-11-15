@@ -1,15 +1,17 @@
 class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
-  belongs_to :current_question, class_name: 'Question'
+  belongs_to :current_question, class_name: 'Question', optional: true
+  has_many :badges, dependent: :destroy
 
   before_validation :before_validation_set_first_question, on: :create
-  before_update :before_update_set_next_question
 
   SUCCESS_RATE_LEVEL = 85
 
   def accept!(answer_ids)
     self.correct_questions_count += 1 if correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+
+    self.current_question = next_question
 
     save
   end
@@ -54,9 +56,5 @@ class TestPassage < ApplicationRecord
 
   def before_validation_set_first_question
     self.current_question = questions.first
-  end
-
-  def before_update_set_next_question
-    self.current_question = next_question
   end
 end
